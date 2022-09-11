@@ -1,13 +1,15 @@
-import React from 'react';
 import Link from 'next/link';
-
-import { MdArrowUpward } from 'react-icons/md';
+import { Icons } from './Icons';
 
 export default function ScrollToTop() {
   return (
-    <Link href="/" className="p-2">
+    <Link href="/">
       <a>
-        <MdArrowUpward className=" sticky bottom-4 left-4 w-8 h-8  text-primary-text bg-hover-color rounded-lg" />
+        <Icons
+          iconName="arrowUp"
+          size="large"
+          className=" text-primary-500 rounded-lg bg-secondary-200 sticky top-[90%] ml-2"
+        />
       </a>
     </Link>
   );
