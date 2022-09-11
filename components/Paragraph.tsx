@@ -1,7 +1,8 @@
-import React from 'react';
-
-interface ParagraphProps {
+interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
   content: string;
+  className?: string;
 }
 
-export const Paragraph = ({ content }: ParagraphProps) => <p>{content}</p>;
+export const Paragraph = ({ content, ...props }: ParagraphProps) => (
+  <p {...props}>{content}</p>
+);
