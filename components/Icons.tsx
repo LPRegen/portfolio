@@ -1,10 +1,13 @@
 import { GiPoolTriangle } from 'react-icons/gi';
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { HiArrowSmUp, HiMenu } from 'react-icons/hi';
 
 const supportedIcons = {
   arrowUp: HiArrowSmUp,
   menu: HiMenu,
   logo: GiPoolTriangle,
+  linkedin: BsLinkedin,
+  github: BsGithub,
 };
 
 const iconSize = {
