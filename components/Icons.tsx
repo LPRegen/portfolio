@@ -1,7 +1,10 @@
-import { HiArrowSmUp } from 'react-icons/hi';
+import { GiPoolTriangle } from 'react-icons/gi';
+import { HiArrowSmUp, HiMenu } from 'react-icons/hi';
 
 const supportedIcons = {
   arrowUp: HiArrowSmUp,
+  menu: HiMenu,
+  logo: GiPoolTriangle,
 };
 
 const iconSize = {
@@ -11,19 +14,19 @@ const iconSize = {
   extraLarge: 'w-12 h-12',
 };
 
-interface IconsProps {
+interface IconProps {
   'aria-hidden'?: false | true;
   iconName: keyof typeof supportedIcons;
   size?: keyof typeof iconSize;
   className?: string;
 }
 
-export const Icons = ({
+export const Icon = ({
   'aria-hidden': ariaHidden = true,
   iconName,
   size = 'medium',
   className,
-}: IconsProps) => {
+}: IconProps) => {
   const SelectedIcon = supportedIcons[iconName];
 
   return (
