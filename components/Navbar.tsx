@@ -1,51 +1,69 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Icon } from './Icons';
 
-import { MdMenu } from 'react-icons/md';
+interface Item {
+  name: string;
+  href: string;
+}
 
-const Navbar = () => {
-  const [active, setActive] = useState(false);
+interface ItemList {
+  itemList: Array<Item>;
+}
 
-  const handleClick = () => {
-    setActive(!active);
+const Navbar = ({ itemList, ...props }: ItemList) => {
+  const [newScroll, setScroll] = useState(0);
+  const [prevScroll, setPrevScroll] = useState(0);
+
+  const updatePrevScroll = () => {
+    setPrevScroll(newScroll);
   };
 
-  return (
-    <nav className=" flex flex-wrap items-center   justify-between w-full py-4 px-4 shadow-lg bg-primary-bg text-primary-text">
-      <div className=" flex text-2xl :hover cursor-pointer w-fit">
-        <MdMenu tabIndex={0} onClick={handleClick} />
-      </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY);
+      updatePrevScroll();
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
 
-      <div
-        className={`${active ? '' : 'hidden'}
-        flex flex-col gap-8 pt-8 w-full`}
-      >
-        <Link href="#about-me">
-          <a
-            onClick={handleClick}
-            className="p-2 hover:bg-hover-color rounded-lg focus:bg-hover-color"
-          >
-            About me
-          </a>
+  const navItem =
+    'py-1 my-2 flex items-center text-white hover:opacity-80 active:underline';
+
+  const Item = ({ item }: { item: Item }) => {
+    return (
+      <li>
+        <Link href={item.href}>
+          <a className={navItem}>{item.name}</a>
         </Link>
-        <Link href="#projects">
-          <a
-            onClick={handleClick}
-            className="p-2 hover:bg-hover-color rounded-lg focus:bg-hover-color"
-          >
-            Projects
-          </a>
-        </Link>
-        <Link href="#contact">
-          <a
-            onClick={handleClick}
-            className="p-2 hover:bg-hover-color rounded-lg focus:bg-hover-color"
-          >
-            Contact
-          </a>
-        </Link>
+      </li>
+    );
+  };
+
+  const displayNav = () => (newScroll > prevScroll ? 'hidden' : 'fixed');
+
+  return (
+    <div {...props} className={`${displayNav()} w-full bg-primary-700`}>
+      <div className="flex gap-4 items-center justify-center">
+        <div aria-label="Home Page">
+          <Link href="/">
+            <a>
+              <Icon iconName="logo" size="large" />
+            </a>
+          </Link>
+        </div>
+        <nav>
+          <ul className="flex gap-2">
+            {itemList.map((item) => (
+              <Item item={item} key={item.name} />
+            ))}
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </div>
   );
 };
 
