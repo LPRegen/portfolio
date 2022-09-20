@@ -33,7 +33,7 @@ module.exports = {
           800: '#4B4B4B',
           900: '#5E5E5E',
         },
-        black: '#1F1F1F',
+        black: '#111827',
         alert: colors.red,
         warning: colors.amber,
         valid: colors.lime,
