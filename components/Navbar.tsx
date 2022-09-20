@@ -46,7 +46,7 @@ const Navbar = ({ itemList, ...props }: ItemList) => {
   const displayNav = () => (newScroll > prevScroll ? 'hidden' : 'fixed');
 
   return (
-    <div {...props} className={`${displayNav()} w-full bg-primary-700`}>
+    <div {...props} className={`${displayNav()} w-full z-50 bg-primary-500`}>
       <div className="flex gap-4 items-center justify-center">
         <div aria-label="Home Page">
           <Link href="/">
