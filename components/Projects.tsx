@@ -33,7 +33,6 @@ const projectList: Project[] = [
 export const Projects = () => {
   const Links = ({ live, repo }: { live: string; repo: string }) => {
     const anchorStyle = 'flex gap-2 text-primary-800/90 underline';
-
     return (
       <div className="flex gap-12">
         <Link href={live}>
@@ -62,6 +61,8 @@ export const Projects = () => {
 
   return (
     <div id="projects" className="flex flex-col gap-8 items-center">
+      <Title as="h2" content="Projects" className="text-xl w-full" />
+
       {projectList.map((project) => {
         return (
           <div key={project.name} className="shadow-xl">
