@@ -1,6 +1,20 @@
 import { GiPoolTriangle } from 'react-icons/gi';
 import { BsLinkedin, BsGithub, BsLink } from 'react-icons/bs';
 import { HiArrowSmUp, HiMenu } from 'react-icons/hi';
+import {
+  SiJavascript,
+  SiHtml5,
+  SiCsswizardry,
+  SiTailwindcss,
+  SiReact,
+  SiNpm,
+  SiGit,
+  SiJest,
+  SiTypescript,
+  SiWebpack,
+  SiNextdotjs,
+  SiStoryblok,
+} from 'react-icons/si';
 
 const supportedIcons = {
   arrowUp: HiArrowSmUp,
@@ -9,6 +23,18 @@ const supportedIcons = {
   linkedin: BsLinkedin,
   github: BsGithub,
   link: BsLink,
+  javascript: SiJavascript,
+  html: SiHtml5,
+  css: SiCsswizardry,
+  tailwind: SiTailwindcss,
+  react: SiReact,
+  npm: SiNpm,
+  git: SiGit,
+  jest: SiJest,
+  typescript: SiTypescript,
+  webpack: SiWebpack,
+  next: SiNextdotjs,
+  story: SiStoryblok,
 };
 
 const iconSize = {
