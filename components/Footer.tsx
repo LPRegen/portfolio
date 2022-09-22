@@ -41,8 +41,10 @@ export const Footer = () => {
   const Icons = ({ item }: { item: Items }) => (
     <span aria-label={`${item.name} account`}>
       <Link href={item.href}>
-        <a target={item.target}>
-          {/* eslint-disable */}
+        <a
+          target={item.target}
+          title={item.name === 'github' ? 'Github' : 'Linkedin'}
+        >
           <Icon
             iconName={item.name === 'github' ? 'github' : 'linkedin'}
             size="large"
@@ -53,7 +55,7 @@ export const Footer = () => {
   );
 
   return (
-    <footer className="flex flex-col gap-8">
+    <footer className="flex flex-col gap-8 border-t mt-10">
       <ul className="flex justify-center items-center pt-6 gap-[5%]">
         {sections.map((item) => (
           <Sections item={item} key={item.name} />
