@@ -13,7 +13,7 @@ export const Title = ({ content, as, className, ...props }: TitleProps) => {
       styles = 'font-extrabold text-2xl text-black';
       break;
     case 'h2':
-      styles = 'font-bold text-lg text-black';
+      styles = 'font-bold text-xl text-black';
       break;
     case 'h3':
       styles = 'font-semibold text-lg text-black';
