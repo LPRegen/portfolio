@@ -1,13 +1,15 @@
+import { Paragraph } from './Paragraph';
+
 interface TechnologiesProps {
   title: string;
-  icon: any;
+  icon: React.ReactElement;
 }
 
 export const Technology = ({ title, icon }: TechnologiesProps) => {
   return (
-    <div>
+    <div className="flex flex-col gap-2 justify-center items-center text-secondary-800">
       {icon}
-      {title}
+      <Paragraph content={title} className="text-secondary-600 text-sm" />
     </div>
   );
 };
