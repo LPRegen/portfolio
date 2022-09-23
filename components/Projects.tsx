@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import Image, { StaticImageData } from 'next/image';
 import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
+
+import ImageTest from '../public/Screenshot_2022-08-26-01-49-11_3280x1080.png';
 
 type Project = {
   name: string;
@@ -9,6 +12,8 @@ type Project = {
   technologies: string;
   live: string;
   repo: string;
+  image: StaticImageData;
+  altImg: string;
 };
 
 const projectList: Project[] = [
@@ -19,6 +24,8 @@ const projectList: Project[] = [
     technologies: 'Developed with JavaScript, Webpack and date-fns library.',
     live: 'https:www.google.com',
     repo: 'https:www.google.com',
+    image: ImageTest,
+    altImg: 'test',
   },
   {
     name: 'Todo List2',
@@ -27,6 +34,8 @@ const projectList: Project[] = [
     technologies: 'Developed with JavaScript, Webpack and date-fns library.',
     live: 'https:www.google.com',
     repo: 'https:www.google.com',
+    image: ImageTest,
+    altImg: 'test',
   },
 ];
 
@@ -34,7 +43,7 @@ export const Projects = () => {
   const Links = ({ live, repo }: { live: string; repo: string }) => {
     const anchorStyle = 'flex gap-2 text-primary-800/90 underline';
     return (
-      <div className="flex gap-12">
+      <div className="grid grid-cols-2 gap-12 py-8">
         <Link href={live}>
           <a
             target="_blank"
@@ -61,17 +70,19 @@ export const Projects = () => {
 
   return (
     <div id="projects" className="flex flex-col gap-8 items-center">
-      <Title as="h2" content="Projects" className="text-xl w-full" />
+      <Title as="h2" content="Projects" className="w-full" />
 
       {projectList.map((project) => {
         return (
-          <div key={project.name} className="shadow-xl">
-            <div className="flex flex-col gap-4 items-center p-4 rounded-b-xl">
-              <Title
-                as="h3"
-                content={project.name}
-                className="text-lg font-semibold w-full "
-              />
+          <div key={project.name} className="shadow-xl rounded-xl">
+            <Image
+              src={project.image}
+              alt={project.altImg}
+              layout="responsive"
+              className="rounded-t-xl"
+            />
+            <div className="flex flex-col gap-4 items-center p-4">
+              <Title as="h3" content={project.name} className="w-full " />
               <Paragraph
                 className="text-secondary-800"
                 content={project.description}
