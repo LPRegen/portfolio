@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Menu } from '@headlessui/react';
 import Link from 'next/link';
 import { Icon } from './Icons';
 
@@ -7,63 +8,48 @@ interface Item {
   href: string;
 }
 
-interface ItemList {
-  itemList: Array<Item>;
-}
+const itemList = [
+  { name: 'About me', href: '/#about-me' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Contact', href: '/#contact' },
+  { name: 'Blog', href: '/blog' },
+];
 
-const Navbar = ({ itemList, ...props }: ItemList) => {
-  const [newScroll, setScroll] = useState(0);
-  const [prevScroll, setPrevScroll] = useState(0);
-
-  const updatePrevScroll = () => {
-    setPrevScroll(newScroll);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY);
-      updatePrevScroll();
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
-
+const Navbar = () => {
   const navItem =
-    'py-1 my-2 flex items-center text-white hover:opacity-80 active:underline';
+    'block px-3 py-2 my-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100';
 
-  const Item = ({ item }: { item: Item }) => {
+  const MenuItem = ({ item }: { item: Item }) => {
     return (
-      <li>
-        <Link href={item.href}>
-          <a className={navItem}>{item.name}</a>
-        </Link>
-      </li>
+      <Menu.Item>
+        {({ active }) => (
+          <Link href={item.href}>
+            <a className={`${navItem} ${active && 'bg-secondary-300'}`}>
+              {item.name}
+            </a>
+          </Link>
+        )}
+      </Menu.Item>
     );
   };
 
-  const displayNav = () => (newScroll > prevScroll ? 'hidden' : 'fixed');
+  // TODO close menu when an item is clicked.
 
   return (
-    <div {...props} className={`${displayNav()} w-full z-50 bg-primary-500`}>
-      <div className="flex gap-4 items-center justify-center">
-        <div aria-label="Home Page">
-          <Link href="/">
-            <a>
-              <Icon iconName="logo" size="large" />
-            </a>
-          </Link>
-        </div>
-        <nav>
-          <ul className="flex gap-2">
-            {itemList.map((item) => (
-              <Item item={item} key={item.name} />
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <Menu as="nav" className="absolute w-full z-50 border-b shadow-lg">
+      <Menu.Button className="px-3 py-2 my-1 focus:bg-gray-100 rounded-md">
+        <Icon iconName="menu" size="large" />
+      </Menu.Button>
+
+      <Menu.Items
+        aria-label="Menu items"
+        className="absolute z-10 w-full px-2 pb-3 bg-white shadow-lg"
+      >
+        {itemList.map((item) => (
+          <MenuItem item={item} key={item.name} />
+        ))}
+      </Menu.Items>
+    </Menu>
   );
 };
 
