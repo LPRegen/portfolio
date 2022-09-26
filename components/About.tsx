@@ -9,7 +9,13 @@ export const AboutMe = () => {
       <Title as="h2" className="w-full relative" after>
         About me
       </Title>
-      <Paragraph content="I'm a selftought Frontend developer who lives in Argentina and enjoys new challenges! I think in every challenge, there is an opportunity to improve myself. To continue learning I use different sources like books, articles, videos or even communities. I enjoy to keep learning and also I have plans to become a MERN fullstack developer." />
+      <Paragraph>
+        I am a selftought Frontend developer who lives in Argentina and enjoys
+        new challenges! I think in every challenge, there is an opportunity to
+        improve myself. To continue learning I use different sources like books,
+        articles, videos or even communities. I enjoy to keep learning and also
+        I have plans to become a MERN fullstack developer.
+      </Paragraph>
       <div className="flex flex-col gap-6 rounded-xl shadow-2xl p-4 w-full">
         <Title as="h3">Technologies</Title>
         <div className="grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">

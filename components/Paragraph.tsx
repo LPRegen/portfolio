@@ -1,8 +1,8 @@
 interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
-  content: string;
+  children: React.ReactNode;
   className?: string;
 }
 
-export const Paragraph = ({ content, ...props }: ParagraphProps) => (
-  <p {...props}>{content}</p>
+export const Paragraph = ({ children, ...props }: ParagraphProps) => (
+  <p {...props}>{children}</p>
 );

@@ -87,14 +87,12 @@ export const Projects = () => {
               <Title as="h3" className="w-full">
                 {project.name}
               </Title>
-              <Paragraph
-                className="text-secondary-800"
-                content={project.description}
-              />
-              <Paragraph
-                className="text-secondary-700"
-                content={project.technologies}
-              />
+              <Paragraph className="text-secondary-800">
+                {project.description}
+              </Paragraph>
+              <Paragraph className="text-secondary-700">
+                {project.technologies}
+              </Paragraph>
               <Links repo={project.repo} live={project.live} />
             </div>
           </div>
