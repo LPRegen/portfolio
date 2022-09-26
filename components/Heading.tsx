@@ -2,9 +2,16 @@ interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   content: string;
   as: 'h1' | 'h2' | 'h3' | 'h4';
   className?: string;
+  after?: boolean;
 }
 
-export const Title = ({ content, as, className, ...props }: TitleProps) => {
+export const Title = ({
+  content,
+  as,
+  className,
+  after,
+  ...props
+}: TitleProps) => {
   const Component = as;
 
   let styles: string;
@@ -23,8 +30,12 @@ export const Title = ({ content, as, className, ...props }: TitleProps) => {
       break;
   }
 
+  const afterLine: string = after
+    ? 'after:content-[""] after:block after:relative after:border-b after:w-[60%] after:top-[-0.8em] after:right-0 after:ml-[40%] after:border-secondary-400'
+    : '';
+
   return (
-    <Component className={`${styles} ${className}`} {...props}>
+    <Component className={`${styles} ${className} ${afterLine} `} {...props}>
       {content}
     </Component>
   );
