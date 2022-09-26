@@ -3,15 +3,13 @@ import { Paragraph } from './Paragraph';
 
 export const Hero = () => {
   return (
-    <div className="flex flex-col gap-[10vw]">
-      <div className="grid gap-[8vw]">
-        <Title as="h1" content="Manuel" className="text-[10vw] pl-[5%]" />
-        <Title as="h1" content="Escribano" className="text-[10vw] pl-[15%]" />
-      </div>
-      <div>
-        <Paragraph content="Frontend" className="text-[7.5vmin] pl-[25%]" />
-        <Paragraph content="Developer" className="text-[7.5vmin] pl-[35%]" />
-      </div>
+    <div className="flex flex-col my-24">
+      <Paragraph content="Hi, my name is" className="text-sm pb-2 opacity-80" />
+      <Title as="h1" content="Manuel Escribano." className="text-[35px] pb-2" />
+      <Paragraph
+        content="I'm a self taught frontend developer looking to make a positive impact in the life of people through technology."
+        className="text-sm opacity-80"
+      />
     </div>
   );
 };
