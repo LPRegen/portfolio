@@ -1,12 +1,12 @@
 interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
-  content: string;
+  children: React.ReactNode;
   as: 'h1' | 'h2' | 'h3' | 'h4';
   className?: string;
   after?: boolean;
 }
 
 export const Title = ({
-  content,
+  children,
   as,
   className,
   after,
@@ -36,7 +36,7 @@ export const Title = ({
 
   return (
     <Component className={`${styles} ${className} ${afterLine} `} {...props}>
-      {content}
+      {children}
     </Component>
   );
 };
