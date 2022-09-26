@@ -2,13 +2,11 @@ import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
 import { Technology } from './Technologies';
 import { Icon } from './Icons';
+import { SectionWrapper } from './Wrapper';
 
 export const AboutMe = () => {
   return (
-    <div id="about-me" className="flex flex-col gap-8 items-center">
-      <Title as="h2" className="w-full relative" after>
-        About me
-      </Title>
+    <SectionWrapper id="about-me" title="About-me">
       <Paragraph>
         I am a selftought Frontend developer who lives in Argentina and enjoys
         new challenges! I think in every challenge, there is an opportunity to
@@ -66,6 +64,6 @@ export const AboutMe = () => {
           />
         </div>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };

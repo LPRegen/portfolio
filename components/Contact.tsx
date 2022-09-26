@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react';
-import { Title } from './Heading';
+import { SectionWrapper } from './Wrapper';
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm('mnqwwopk');
@@ -80,11 +80,8 @@ export function ContactForm() {
   };
 
   return (
-    <div id="contact" className="flex flex-col gap-8">
-      <Title as="h2" after>
-        Contact
-      </Title>
+    <SectionWrapper id="contact" title="Contact">
       <Form />
-    </div>
+    </SectionWrapper>
   );
 }

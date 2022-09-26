@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
+import { SectionWrapper } from './Wrapper';
 
 import ImageTest from '../public/Screenshot_2022-08-26-01-49-11_3280x1080.png';
 
@@ -69,11 +70,7 @@ export const Projects = () => {
   };
 
   return (
-    <div id="projects" className="flex flex-col gap-8 items-center">
-      <Title as="h2" className="w-full" after>
-        Projects
-      </Title>
-
+    <SectionWrapper id="projects" title="Projects">
       {projectList.map((project) => {
         return (
           <div key={project.name} className="shadow-xl rounded-xl">
@@ -98,6 +95,6 @@ export const Projects = () => {
           </div>
         );
       })}
-    </div>
+    </SectionWrapper>
   );
 };
