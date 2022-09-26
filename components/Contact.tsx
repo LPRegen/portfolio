@@ -81,7 +81,9 @@ export function ContactForm() {
 
   return (
     <div id="contact" className="flex flex-col gap-8">
-      <Title as="h2" content="Contact" />
+      <Title as="h2" after>
+        Contact
+      </Title>
       <Form />
     </div>
   );

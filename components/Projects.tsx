@@ -70,7 +70,9 @@ export const Projects = () => {
 
   return (
     <div id="projects" className="flex flex-col gap-8 items-center">
-      <Title as="h2" content="Projects" className="w-full" />
+      <Title as="h2" className="w-full" after>
+        Projects
+      </Title>
 
       {projectList.map((project) => {
         return (
@@ -82,7 +84,9 @@ export const Projects = () => {
               className="rounded-t-xl"
             />
             <div className="flex flex-col gap-4 items-center p-4">
-              <Title as="h3" content={project.name} className="w-full " />
+              <Title as="h3" className="w-full">
+                {project.name}
+              </Title>
               <Paragraph
                 className="text-secondary-800"
                 content={project.description}
