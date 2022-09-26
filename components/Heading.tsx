@@ -35,7 +35,7 @@ export const Title = ({
     : '';
 
   return (
-    <Component className={`${styles} ${className} ${afterLine} `} {...props}>
+    <Component className={`${styles} ${className} ${afterLine}`} {...props}>
       {children}
     </Component>
   );
