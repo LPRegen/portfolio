@@ -30,7 +30,7 @@ export function ContactForm() {
     return (
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 p-4 rounded-xl shadow-xl"
+        className="flex flex-col gap-4 p-4 rounded-xl shadow-2xl"
       >
         <div className={containerStyle}>
           <label htmlFor="name" className={labelStyle}>
@@ -40,6 +40,7 @@ export function ContactForm() {
             id="name"
             type="text"
             name="name"
+            placeholder="Your name"
             required
             className={inputStyle}
           />
@@ -52,6 +53,7 @@ export function ContactForm() {
             id="email"
             type="email"
             name="email"
+            placeholder="your-email@gmail.com"
             required
             className={inputStyle}
           />
@@ -64,6 +66,7 @@ export function ContactForm() {
           <textarea
             id="message"
             name="message"
+            placeholder="Your message."
             required
             className={inputStyle}
             rows={10}
