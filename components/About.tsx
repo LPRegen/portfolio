@@ -6,7 +6,7 @@ import { SectionWrapper } from './Wrapper';
 
 export const AboutMe = () => {
   return (
-    <SectionWrapper id="about-me" title="About-me">
+    <SectionWrapper id="about-me" title="About me">
       <Paragraph>
         I am a selftought Frontend developer who lives in Argentina and enjoys
         new challenges! I think in every challenge, there is an opportunity to

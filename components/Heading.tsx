@@ -31,7 +31,7 @@ export const Title = ({
   }
 
   const afterLine: string = after
-    ? 'after:content-[""] after:block after:relative after:border-b after:w-[60%] after:top-[-0.8em] after:right-0 after:ml-[40%] after:border-secondary-400'
+    ? 'after:content-[""] after:block after:relative after:border-b after:w-[55%] after:top-[-0.8em] after:right-0 after:ml-[40%] after:mr-[5%] after:border-secondary-400'
     : '';
 
   return (

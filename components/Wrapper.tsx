@@ -14,10 +14,11 @@ export const SectionWrapper = ({
   id,
 }: SectionWrapperProps) => {
   const wrapperStyle = 'flex flex-col gap-8';
+  let styles = className ? className : '';
 
   return (
-    <div id={id} className={`${wrapperStyle} ${className}`}>
-      <Title as="h2" after>
+    <div id={id} className={`${wrapperStyle} ${styles}`}>
+      <Title as="h2" after className="pb-8">
         {title}
       </Title>
       {children}
