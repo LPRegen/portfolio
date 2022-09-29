@@ -1,11 +1,12 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { SectionWrapper } from './Wrapper';
+import { Button } from './Button';
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm('mnqwwopk');
   const containerStyle = 'flex flex-col gap-2';
 
-  const Button = () => {
+  const ContactButton = () => {
     let formState = 'Submit';
     if (state.submitting) {
       formState = 'Sending...';
@@ -16,9 +17,14 @@ export function ContactForm() {
     const buttonStyle = `${sendingStyle()} rounded-lg text-secondary-800 bg-primary-200/50 p-4 disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed`;
 
     return (
-      <button type="submit" disabled={state.succeeded} className={buttonStyle}>
+      <Button
+        variant="primary"
+        type="submit"
+        disabled={state.succeeded}
+        className={buttonStyle}
+      >
         {formState}
-      </button>
+      </Button>
     );
   };
 
@@ -77,7 +83,7 @@ export function ContactForm() {
             errors={state.errors}
           />
         </div>
-        <Button />
+        <ContactButton />
       </form>
     );
   };
