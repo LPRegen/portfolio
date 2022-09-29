@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu } from '@headlessui/react';
 import Link from 'next/link';
 import { Icon } from './Icons';
@@ -23,11 +22,13 @@ const Navbar = () => {
     return (
       <Menu.Item>
         {({ active }) => (
-          <Link href={item.href}>
-            <a className={`${navItem} ${active && 'bg-secondary-300'}`}>
-              {item.name}
-            </a>
-          </Link>
+          <div>
+            <Link href={item.href}>
+              <a className={`${navItem} ${active && 'bg-secondary-300'}`}>
+                {item.name}
+              </a>
+            </Link>
+          </div>
         )}
       </Menu.Item>
     );
