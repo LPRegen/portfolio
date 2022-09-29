@@ -12,7 +12,7 @@ export const Hero = () => {
       <Title as="h1" className="text-hero pb-4">
         Manuel Escribano.
       </Title>
-      <Paragraph className="text-sm opacity-80">
+      <Paragraph className="text-sm opacity-80 max-w-[740px]">
         I am a self taught frontend developer looking to make a positive impact
         in the life of people through technology.
       </Paragraph>
