@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col gap-32 mx-12 pt-24 sm:mx-24 md:mx-36">
+      <div className="flex flex-col gap-32 mx-12 pt-24 sm:mx-24 md:mx-36 lg:mx-64 xl:mx-80 2xl:mx-96">
         <Hero />
         <AboutMe />
         <Projects />
