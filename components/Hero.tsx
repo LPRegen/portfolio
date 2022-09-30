@@ -3,24 +3,24 @@ import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
 
 export const Hero = () => {
+  const heroStyles = 'flex flex-col gap-4 my-32 sm:pt-32 sm:gap-6';
+  const textStyles = 'text-sm opacity-80';
   const contactStyles =
     'bg-primary-200/80 rounded-lg px-4 py-2 text-lg mr-auto my-6 hover:bg-primary-500/70 focus:outline-none focus:ring focus:ring-primary-400';
 
   return (
-    <div className="flex flex-col my-32">
-      <Paragraph className="text-sm pb-4 opacity-80">Hi, my name is</Paragraph>
-      <Title as="h1" className="text-hero pb-4">
+    <div className={heroStyles}>
+      <Paragraph className={`${textStyles}`}>Hi, my name is</Paragraph>
+      <Title as="h1" className="text-hero">
         Manuel Escribano.
       </Title>
-      <Paragraph className="text-sm opacity-80 max-w-[740px]">
+      <Paragraph className={`${textStyles} max-w-[740px]`}>
         I am a self taught frontend developer looking to make a positive impact
         in the life of people through technology.
       </Paragraph>
-      <div className="flex gap-8 flex-col">
-        <Link href="#contact">
-          <a className={contactStyles}>Contact me</a>
-        </Link>
-      </div>
+      <Link href="#contact">
+        <a className={contactStyles}>Contact me</a>
+      </Link>
     </div>
   );
 };
