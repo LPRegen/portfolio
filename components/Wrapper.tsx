@@ -13,7 +13,7 @@ export const SectionWrapper = ({
   className,
   id,
 }: SectionWrapperProps) => {
-  const wrapperStyle = 'flex flex-col gap-8';
+  const wrapperStyle = 'flex flex-col gap-8 lg:gap-16';
   let styles = className ? className : '';
 
   return (
