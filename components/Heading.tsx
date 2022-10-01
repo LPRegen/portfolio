@@ -8,7 +8,7 @@ interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
 export const Title = ({
   children,
   as,
-  className,
+  className = '',
   after,
   ...props
 }: TitleProps) => {
@@ -30,8 +30,8 @@ export const Title = ({
       break;
   }
 
-  const afterLine: string = after
-    ? 'after:content-[""] after:block after:relative after:border-b after:w-[55%] after:top-[-0.8em] after:right-0 after:ml-[40%] after:mr-[5%] after:border-secondary-400'
+  const afterLine = after
+    ? 'after:content-[""] after:block after:relative after:border-b after:w-[60%] after:top-[-0.8em] after:right-0 after:ml-[40%] after:mr-[5%] after:border-secondary-400'
     : '';
 
   return (

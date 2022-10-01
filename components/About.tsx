@@ -14,7 +14,7 @@ export const AboutMe = () => {
         articles, videos or even communities. I enjoy to keep learning and also
         I have plans to become a MERN fullstack developer.
       </Paragraph>
-      <div className="flex flex-col gap-6 rounded-xl shadow-2xl p-4 w-full">
+      <div className="flex flex-col gap-6 rounded-xl shadow-2xl p-4 mx-4">
         <Title as="h3">Technologies</Title>
         <div className="grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">
           <Technology
