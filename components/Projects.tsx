@@ -43,10 +43,13 @@ const projectList: Project[] = [
 ];
 
 export const Projects = () => {
+  const containerStyles =
+    'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2';
+
   const Links = ({ live, repo }: { live: string; repo: string }) => {
     const anchorStyle = 'flex gap-2 text-primary-800/90 underline';
     return (
-      <div className="grid grid-cols-2 gap-12 py-8">
+      <div className="grid grid-cols-2 gap-12 mt-8 mb-4">
         <Link href={live}>
           <a
             target="_blank"
@@ -73,30 +76,34 @@ export const Projects = () => {
 
   return (
     <SectionWrapper id="projects" title="Projects">
-      {projectList.map((project) => {
-        return (
-          <div key={project.name} className="shadow-2xl rounded-xl">
-            <Image
-              src={project.image}
-              alt={project.altImg}
-              layout="responsive"
-              className="rounded-t-xl"
-            />
-            <div className="flex flex-col gap-4 items-center p-4">
-              <Title as="h3" className="w-full">
-                {project.name}
-              </Title>
-              <Paragraph className="text-secondary-800">
-                {project.description}
-              </Paragraph>
-              <Paragraph className="text-secondary-600 w-full">
-                {project.technologies}
-              </Paragraph>
-              <Links repo={project.repo} live={project.live} />
+      {projectList.map(
+        ({ name, image, altImg, description, technologies, repo, live }) => {
+          return (
+            <div key={name} className={`${containerStyles}`}>
+              <div className="relative -z-10">
+                <Image
+                  src={image}
+                  alt={altImg}
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <div className="flex flex-col justify-between gap-4 items-center p-4 sm:p-8 lg:gap-8">
+                <Title as="h3" className="w-full">
+                  {name}
+                </Title>
+                <Paragraph className="text-secondary-800">
+                  {description}
+                </Paragraph>
+                <Paragraph className="text-secondary-600 w-full">
+                  {technologies}
+                </Paragraph>
+                <Links repo={repo} live={live} />
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        }
+      )}
     </SectionWrapper>
   );
 };
