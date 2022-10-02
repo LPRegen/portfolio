@@ -55,7 +55,7 @@ export const Footer = () => {
   );
 
   return (
-    <footer className="flex flex-col gap-8 border-t mt-10">
+    <footer className="flex flex-col gap-8 border-t mt-20">
       <ul className="flex justify-center items-center pt-6 gap-[5%]">
         {sections.map((item) => (
           <Sections item={item} key={item.name} />
