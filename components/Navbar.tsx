@@ -38,10 +38,7 @@ const Navbar = () => {
   };
 
   const wrapperStyle = 'absolute w-full z-50 border-b shadow-lg';
-  const mdStyles = 'md:flex md:justify-between md:items-center md:px-36';
-  const lgStyles = 'lg:flex lg:justify-between lg:items-center lg:px-64';
-  const xlStyles = 'xl:flex xl:justify-between xl:items-center xl:px-80';
-  const xxlStyles = '2xl:flex 2xl:justify-between 2xl:items-center 2xl:px-96';
+  const mdStyles = 'md:gap-8 md:flex md:items-center md:px-28';
 
   // TODO close menu when an item is clicked.
 
@@ -64,7 +61,7 @@ const Navbar = () => {
         </Menu.Items>
       </Menu>
       <div
-        className={`hidden h-14 ${wrapperStyle} ${mdStyles} ${lgStyles} ${xlStyles} ${xxlStyles}`}
+        className={`hidden h-14 ${wrapperStyle} ${mdStyles} lg:px-36 xl:px-56 2xl:px-64`}
       >
         {itemList.map((item) => (
           <Link href={item.href} key={item.name}>
