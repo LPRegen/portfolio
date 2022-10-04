@@ -99,7 +99,7 @@ export const Projects = () => {
                   objectFit="contain"
                 />
               </div>
-              <div className="flex flex-col justify-between gap-4 items-center p-4 sm:p-8 lg:gap-8">
+              <div className="flex flex-col justify-between gap-4 items-center px-4 sm:p-8 lg:p-4 lg:gap-8">
                 <Title as="h3" className="w-full">
                   {name}
                 </Title>
