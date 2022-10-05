@@ -7,7 +7,7 @@ export default function ScrollToTop() {
 
   return (
     <Link href="/">
-      <a className={`${scrollStyles}`}>
+      <a className={`${scrollStyles}`} title="Scroll to top.">
         <Icon iconName="arrowUp" size="large" />
       </a>
     </Link>
