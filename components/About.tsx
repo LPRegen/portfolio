@@ -9,16 +9,17 @@ export const AboutMe = () => {
   return (
     <SectionWrapper id="about-me" title="About me">
       <div className="grid gap-2">
-        <Paragraph>Hi! My name is Manuel and I am a Frontend dev!</Paragraph>
+        <Paragraph>Hi! My name is Manuel and I am a frontend dev!</Paragraph>
         <Paragraph>
           In my work experience I have always enjoyed to provide solutions
           focused on people, because I am helping them and each situation
           represents a challenge!
         </Paragraph>
         <Paragraph>
-          I find web development truly interesting, its gives me the tools to
-          provide solutions for people making a positive impact on its life! And
-          they can be at thousands of kilometers away from you, is crazy!
+          I find <Bold>web development</Bold> truly interesting, its gives me
+          the tools to provide solutions for people making a positive impact on
+          its life! And they can be at thousands of kilometers away from you, is
+          crazy!
         </Paragraph>
         <Paragraph>
           A while ago I have realized how difficult can be for some people to
