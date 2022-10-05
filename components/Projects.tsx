@@ -58,9 +58,9 @@ export const Projects = () => {
   };
 
   const Links = ({ live, repo }: { live: string; repo: string }) => {
-    const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-2';
+    const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-3';
     return (
-      <div className="grid grid-cols-2 gap-12 mt-8 mb-4">
+      <div className="grid grid-cols-2 gap-12 mt-4">
         <Link href={live}>
           <a
             target="_blank"
