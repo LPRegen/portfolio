@@ -11,7 +11,7 @@ import resumeBuilder from '../public/resume-builder.jpg';
 type Project = {
   name: string;
   description: string;
-  technologies: Array<string>;
+  technologies: string;
   live: string;
   repo: string;
   image: StaticImageData;
@@ -23,7 +23,7 @@ const projectList: Project[] = [
     name: 'Resume builder',
     description:
       'With this app you will be able to create your own resume based on a predefined template, at the end you can download it as a pdf file.',
-    technologies: ['React.js', 'Styled Components'],
+    technologies: 'Built using React.js and Styled Components',
     live: 'https://resume-builder-lime.vercel.app/',
     repo: 'https://github.com/LPRegen/resume-builder',
     image: resumeBuilder,
@@ -33,7 +33,7 @@ const projectList: Project[] = [
     name: 'Weather App',
     description:
       'You will be able to find the forecast for a specific city. The used API is from OpenWeather. The main purpouse was to practice API calls and use asynchronous code with promises.',
-    technologies: ['JS', 'Webpack', 'SASS'],
+    technologies: 'Built using JS, Webpack, SASS',
     live: 'https://lpregen.github.io/weather-app/',
     repo: 'https://github.com/LPRegen/weather-app',
     image: ImageTest,
@@ -44,18 +44,6 @@ const projectList: Project[] = [
 export const Projects = () => {
   const containerStyles =
     'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2';
-
-  const TechnologyList = ({ techList }: { techList: Array<string> }) => {
-    return (
-      <ul className="flex gap-4 text-secondary-600 text-sm w-full">
-        {techList.map((tech) => (
-          <li key={tech} className="whitespace-nowrap">
-            {tech}
-          </li>
-        ))}
-      </ul>
-    );
-  };
 
   const Links = ({ live, repo }: { live: string; repo: string }) => {
     const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-3';
@@ -106,7 +94,9 @@ export const Projects = () => {
                 <Paragraph className="text-secondary-800">
                   {description}
                 </Paragraph>
-                <TechnologyList techList={technologies} />
+                <Paragraph>
+                  <i className="text-secondary-600">{technologies}</i>
+                </Paragraph>
                 <Links repo={repo} live={live} />
               </div>
             </div>
