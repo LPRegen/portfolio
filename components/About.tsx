@@ -32,9 +32,9 @@ export const AboutMe = () => {
         </Paragraph>
       </div>
 
-      <div className="flex flex-col gap-6 rounded-xl shadow-xl p-4 mx-4">
+      <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
         <Title as="h3">Technologies I use</Title>
-        <div className="grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">
+        <div className="grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4 xl:grid-cols-4">
           <Technology
             icon={<Icon iconName="javascript" aria-hidden />}
             title={'JS'}
