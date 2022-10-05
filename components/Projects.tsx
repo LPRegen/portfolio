@@ -47,7 +47,7 @@ export const Projects = () => {
 
   const TechnologyList = ({ techList }: { techList: Array<string> }) => {
     return (
-      <ul className="flex gap-4 text-secondary-600 text-sm ">
+      <ul className="flex gap-4 text-secondary-600 text-sm w-full">
         {techList.map((tech) => (
           <li key={tech} className="whitespace-nowrap">
             {tech}
@@ -58,7 +58,7 @@ export const Projects = () => {
   };
 
   const Links = ({ live, repo }: { live: string; repo: string }) => {
-    const anchorStyle = 'flex gap-2 text-primary-800/90 underline';
+    const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-2';
     return (
       <div className="grid grid-cols-2 gap-12 mt-8 mb-4">
         <Link href={live}>
@@ -99,7 +99,7 @@ export const Projects = () => {
                   objectFit="contain"
                 />
               </div>
-              <div className="flex flex-col justify-between gap-4 items-center px-4 sm:p-8 lg:p-4 lg:gap-8">
+              <div className="flex flex-col justify-between gap-4 items-center px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
                 <Title as="h3" className="w-full">
                   {name}
                 </Title>
