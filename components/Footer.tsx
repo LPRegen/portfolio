@@ -27,7 +27,8 @@ export const Footer = () => {
     },
   ];
 
-  const footerItem = 'py-1 my-2 text-black hover:opacity-80 active:underline';
+  const footerItem =
+    'py-1 my-2 text-black hover:opacity-80 active:underline font-lato';
 
   const Sections = ({ item }: { item: Items }) => (
     <li>

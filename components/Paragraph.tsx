@@ -4,5 +4,7 @@ interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
 }
 
 export const Paragraph = ({ children, ...props }: ParagraphProps) => (
-  <p {...props}>{children}</p>
+  <p {...props} className="font-lato">
+    {children}
+  </p>
 );

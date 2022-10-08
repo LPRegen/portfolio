@@ -4,7 +4,7 @@ import { Button } from './Button';
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm('mnqwwopk');
-  const containerStyle = 'flex flex-col gap-2';
+  const containerStyle = 'grid gap-2';
 
   const ContactButton = () => {
     let formState = 'Submit';
@@ -36,7 +36,7 @@ export function ContactForm() {
     return (
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 p-4 rounded-xl shadow-2xl"
+        className="grid gap-4 p-4 rounded-xl shadow-2xl font-lato"
       >
         <div className={containerStyle}>
           <label htmlFor="name" className={labelStyle}>

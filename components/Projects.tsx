@@ -43,7 +43,7 @@ const projectList: Project[] = [
 
 export const Projects = () => {
   const containerStyles =
-    'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2';
+    'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato';
 
   const Links = ({ live, repo }: { live: string; repo: string }) => {
     const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-3';

@@ -17,7 +17,7 @@ export const SectionWrapper = ({
 
   return (
     <div id={id} className={`${wrapperStyle}`}>
-      <Title as="h2" after className="pb-8 mt-8">
+      <Title as="h2" after className="pb-8 mt-8 font-lato tracking-wide">
         {title}
       </Title>
       <div className={`${wrapperStyle} ${className} px-4`}>{children}</div>

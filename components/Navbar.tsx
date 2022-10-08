@@ -42,7 +42,7 @@ const Navbar = () => {
   // TODO close menu when an item is clicked.
 
   return (
-    <nav>
+    <nav className="font-lato">
       <Menu
         as="div"
         className={`${wrapperStyle} md:hidden lg:hidden xl:hidden 2xl:hidden`}
