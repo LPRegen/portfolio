@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 import Navbar from '../components/Navbar';
+import { HeadComp } from '../components/Head';
 import { Hero } from '../components/Hero';
 import { AboutMe } from '../components/About';
 import { Projects } from '../components/Projects';
 import { ContactForm } from '../components/Contact';
 import ScrollToTop from '../components/ScrollToTop';
 import { Footer } from '../components/Footer';
-import Head from 'next/head';
 
 const Home: NextPage = () => {
   const mainWrapper =
@@ -14,9 +14,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Manuel Escribano | Web Dev</title>
-      </Head>
+      <HeadComp />
       <Navbar />
       <div className={mainWrapper}>
         <Hero />
