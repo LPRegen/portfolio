@@ -11,7 +11,6 @@ const itemList = [
   { name: 'About me', href: '/#about-me' },
   { name: 'Projects', href: '/#projects' },
   { name: 'Contact', href: '/#contact' },
-  { name: 'Blog', href: '/blog' },
 ];
 
 const Navbar = () => {

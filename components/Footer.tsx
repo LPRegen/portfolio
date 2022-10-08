@@ -12,7 +12,6 @@ export const Footer = () => {
     { name: 'About me', href: '/#about-me' },
     { name: 'Projects', href: '/#projects' },
     { name: 'Contact', href: '/#contact' },
-    { name: 'Blog', href: '/blog' },
   ];
 
   const socialNetworks: Array<Items> = [
