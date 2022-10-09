@@ -1,6 +1,9 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { SectionWrapper } from './Wrapper';
 import { Button } from './Button';
+import { Paragraph } from './Paragraph';
+import { Icon } from './Icons';
+import Link from 'next/link';
 
 export function ContactForm() {
   const [state, handleSubmit] = useForm('mnqwwopk');
@@ -28,6 +31,16 @@ export function ContactForm() {
     );
   };
 
+  const Legend = (): JSX.Element => {
+    return (
+      <Paragraph className="max-w-3xl xl:ml-8 2xl:ml-12">
+        Currently I am looking for a position as a frontend developer, if you
+        have any question or just want to chat feel free to send me a message
+        and I will get back to you soon!
+      </Paragraph>
+    );
+  };
+
   const Form = () => {
     const labelStyle = 'text-sm text-secondary-900';
     const inputStyle =
@@ -36,7 +49,7 @@ export function ContactForm() {
     return (
       <form
         onSubmit={handleSubmit}
-        className="grid gap-4 p-4 rounded-xl shadow-2xl font-lato"
+        className="grid gap-4 p-4 rounded-xl shadow-2xl font-lato max-w-lg w-full"
       >
         <div className={containerStyle}>
           <label htmlFor="name" className={labelStyle}>
@@ -75,7 +88,7 @@ export function ContactForm() {
             placeholder="Your message."
             required
             className={inputStyle}
-            rows={10}
+            rows={4}
           />
           <ValidationError
             prefix="Message"
@@ -88,9 +101,30 @@ export function ContactForm() {
     );
   };
 
+  const SocialNetworks = (): JSX.Element => {
+    return (
+      <div className="flex flex-col gap-10 pr-4 pt-12 md:pr-8 lg:pr-12">
+        <Link href="https://www.linkedin.com/in/manuel-escribano-lpregen/">
+          <a title="My LinkedIn profile">
+            <Icon iconName="linkedin" size="large" />
+          </a>
+        </Link>
+        <Link href="https://github.com/LPRegen">
+          <a title="My GitHub profile">
+            <Icon iconName="github" size="large" />
+          </a>
+        </Link>
+      </div>
+    );
+  };
+
   return (
     <SectionWrapper id="contact" title="Contact">
-      <Form />
+      <Legend />
+      <div className="flex justify-center">
+        <SocialNetworks />
+        <Form />
+      </div>
     </SectionWrapper>
   );
 }
