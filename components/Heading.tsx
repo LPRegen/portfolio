@@ -20,13 +20,13 @@ export const Title = ({
       styles = 'font-extrabold text-2xl text-black';
       break;
     case 'h2':
-      styles = 'font-bold text-xl text-black';
+      styles = 'font-bold text-xl text-black font-lato ';
       break;
     case 'h3':
-      styles = 'font-semibold text-lg text-black';
+      styles = 'font-semibold text-lg text-black font-lato ';
       break;
     case 'h4':
-      styles = 'font-bold text-base text-black';
+      styles = 'font-bold text-base text-black font-lato ';
       break;
   }
 
@@ -35,7 +35,10 @@ export const Title = ({
     : '';
 
   return (
-    <Component className={`${styles} ${className} ${afterLine}`} {...props}>
+    <Component
+      className={`${styles} ${className} ${afterLine} tracking-wide`}
+      {...props}
+    >
       {children}
     </Component>
   );

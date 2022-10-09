@@ -9,7 +9,6 @@ export const AboutMe = () => {
   return (
     <SectionWrapper id="about-me" title="About me">
       <div className="grid gap-2">
-        <Paragraph>Hi! My name is Manuel and I am a frontend dev!</Paragraph>
         <Paragraph>
           In my work experience I have always enjoyed to provide solutions
           focused on people, because I am helping them and each situation
@@ -27,15 +26,14 @@ export const AboutMe = () => {
           they can have a better experience.
         </Paragraph>
         <Paragraph>
-          Some of the technologies I use are <Bold>React</Bold>,{' '}
-          <Bold>JavaScript</Bold> and <Bold>TypeScript</Bold>.
+          Some of the technologies I use are on a daily basis are
+          <Bold>React</Bold>, <Bold>JavaScript</Bold> and{' '}
+          <Bold>TypeScript</Bold>.
         </Paragraph>
       </div>
 
       <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
-        <Title as="h3" className="font-lato tracking-wide">
-          Technologies I use
-        </Title>
+        <Title as="h3">Technologies</Title>
         <div className="grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4 xl:grid-cols-4">
           <Technology
             icon={<Icon iconName="javascript" aria-hidden />}
