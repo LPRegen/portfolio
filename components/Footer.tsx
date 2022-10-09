@@ -1,5 +1,5 @@
-import { Icon } from './Icons';
 import Link from 'next/link';
+import { Paragraph } from './Paragraph';
 
 interface Items {
   name: string;
@@ -14,58 +14,29 @@ export const Footer = () => {
     { name: 'Contact', href: '/#contact' },
   ];
 
-  const socialNetworks: Array<Items> = [
-    {
-      name: 'linkedin',
-      href: 'https://www.linkedin.com/in/manuel-escribano-lpregen/',
-      target: '_blank',
-    },
-    {
-      name: 'github',
-      href: 'https://github.com/LPRegen',
-      target: '_blank',
-    },
-  ];
-
   const footerItem =
-    'py-1 my-2 text-black hover:opacity-80 active:underline font-lato';
+    'text-lg py-1 my-2 text-black hover:opacity-80 active:underline font-lato';
 
   const Sections = ({ item }: { item: Items }) => (
     <li>
       <Link href={item.href}>
-        <a className={footerItem}>{item.name}</a>
+        <a className={footerItem} title={`Go to ${item.name} section`}>
+          {item.name}
+        </a>
       </Link>
     </li>
   );
 
-  const Icons = ({ item }: { item: Items }) => (
-    <span aria-label={`${item.name} account`}>
-      <Link href={item.href}>
-        <a
-          target={item.target}
-          title={item.name === 'github' ? 'Github' : 'Linkedin'}
-        >
-          <Icon
-            iconName={item.name === 'github' ? 'github' : 'linkedin'}
-            size="large"
-          />
-        </a>
-      </Link>
-    </span>
-  );
-
   return (
-    <footer className="flex flex-col gap-8 border-t mt-20">
+    <footer className="grid gap-8 border-t mt-20">
       <ul className="flex justify-center items-center pt-6 gap-[5%]">
         {sections.map((item) => (
           <Sections item={item} key={item.name} />
         ))}
       </ul>
-      <div className="flex justify-center items-center pb-6 gap-[10%]">
-        {socialNetworks.map((item) => (
-          <Icons item={item} key={item.name} />
-        ))}
-      </div>
+      <Paragraph className="grid mx-auto text-base pb-6">
+        © Copyright 2022, Manuel Escribano
+      </Paragraph>
     </footer>
   );
 };
