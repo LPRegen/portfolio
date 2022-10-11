@@ -22,7 +22,7 @@ const projectList: Project[] = [
   {
     name: 'Resume builder',
     description:
-      'With this app you will be able to create your own resume based on a predefined template, at the end you can download it as a pdf file.',
+      'First approach to React JS! This project was made with class components, lyfecicle methods, routing and much more! The user after completing the required fields will be able to download its Resume as a PDF file. Bye bye DOM manipulation with Vanilla.',
     technologies: 'Built using React.js and Styled Components',
     live: 'https://resume-builder-lime.vercel.app/',
     repo: 'https://github.com/LPRegen/resume-builder',
