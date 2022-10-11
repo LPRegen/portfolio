@@ -5,7 +5,7 @@ import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
 import { SectionWrapper } from './Wrapper';
 
-import ImageTest from '../public/Screenshot_2022-08-26-01-49-11_3280x1080.png';
+import weatherApp from '../public/weather-app.jpg';
 import resumeBuilder from '../public/resume-builder.jpg';
 
 type Project = {
@@ -32,12 +32,12 @@ const projectList: Project[] = [
   {
     name: 'Weather App',
     description:
-      'You will be able to find the forecast for a specific city. The used API is from OpenWeather. The main purpouse was to practice API calls and use asynchronous code with promises.',
-    technologies: 'Built using JS, Webpack, SASS',
+      'The main purpouse was to practice API calls, use asynchronous code with promises and put in practice ES6+ features. You will be able to find the forecast for a specific city. The used API is from OpenWeather. ',
+    technologies: 'Built using JS, Webpack, SCSS',
     live: 'https://lpregen.github.io/weather-app/',
     repo: 'https://github.com/LPRegen/weather-app',
-    image: ImageTest,
-    altImg: 'test',
+    image: weatherApp,
+    altImg: 'Weather app mockup',
   },
 ];
 

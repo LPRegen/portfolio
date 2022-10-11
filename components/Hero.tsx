@@ -14,11 +14,11 @@ export const Hero = () => {
         Hi, my name is
       </Paragraph>
       <Title as="h1" className="text-hero font-montserrat">
-        Manuel Escribano.
+        Manuel Escribano
       </Title>
       <Paragraph className={`${textStyles} max-w-[740px] font-lato`}>
-        I am a self taught frontend developer looking to make a positive impact
-        in the life of people through technology.
+        Self taught frontend developer looking to make a positive impact in the
+        life of people through technology.
       </Paragraph>
       <Link href="#contact">
         <a className={`${contactStyles} font-lato`}>Contact me</a>

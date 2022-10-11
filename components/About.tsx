@@ -11,22 +11,26 @@ export const AboutMe = () => {
       <div className="grid gap-2">
         <Paragraph>
           In my work experience I have always enjoyed to provide solutions
-          focused on people, because I am helping them and each situation
-          represents a challenge!
+          focused on people, because helping them is a great oportunity to make
+          a positive impact in our world social and economically. In addition
+          each situation represents a challenge!
         </Paragraph>
         <Paragraph>
-          I find <Bold>web development</Bold> truly interesting, its gives me
-          the tools to provide solutions for people making a positive impact on
-          its life! And they can be at thousands of kilometers away from you, is
-          crazy!
+          <Bold>Web development</Bold> is not only interesting but also
+          fascinating because it gives the tools to provide solutions for people
+          may live thousands of kilometers away from each other.
         </Paragraph>
         <Paragraph>
-          A while ago I have realized how difficult can be for some people to
-          interact with the web, so I started to learn about accessibility so
-          they can have a better experience.
+          Realizing the difficulty to interact with the web that exist for some
+          people, I started to learn about <Bold>accessibility</Bold> to provide
+          them a better experience.
         </Paragraph>
         <Paragraph>
-          Some of the technologies I use are on a daily basis are
+          Concepts like Object Oriented Programming (<Bold>OOP</Bold>) and
+          Test-driven Development (<Bold>TDD</Bold>) are familiar to me.
+        </Paragraph>
+        <Paragraph>
+          Some of the technologies I use are on a daily basis are{' '}
           <Bold>React</Bold>, <Bold>JavaScript</Bold> and{' '}
           <Bold>TypeScript</Bold>.
         </Paragraph>
@@ -34,7 +38,7 @@ export const AboutMe = () => {
 
       <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
         <Title as="h3">Technologies</Title>
-        <div className="grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4 xl:grid-cols-4">
+        <div className="text-center grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4 xl:grid-cols-4">
           <Technology
             icon={<Icon iconName="javascript" aria-hidden />}
             title={'JS'}
@@ -57,6 +61,14 @@ export const AboutMe = () => {
           />
           <Technology icon={<Icon iconName="css" aria-hidden />} title="CSS" />
           <Technology
+            icon={<Icon iconName="styled" aria-hidden />}
+            title="Styled Components"
+          />
+          <Technology
+            icon={<Icon iconName="sass" aria-hidden />}
+            title="SASS"
+          />
+          <Technology
             icon={<Icon iconName="tailwind" aria-hidden />}
             title="Tailwind"
           />
@@ -67,6 +79,10 @@ export const AboutMe = () => {
           <Technology
             icon={<Icon iconName="webpack" aria-hidden />}
             title="Webpack"
+          />
+          <Technology
+            icon={<Icon iconName="eslint" aria-hidden />}
+            title={'ESLint'}
           />
           <Technology
             icon={<Icon iconName="jest" aria-hidden />}

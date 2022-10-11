@@ -14,6 +14,9 @@ import {
   SiWebpack,
   SiNextdotjs,
   SiStoryblok,
+  SiSass,
+  SiStyledcomponents,
+  SiEslint,
 } from 'react-icons/si';
 
 const supportedIcons = {
@@ -35,6 +38,9 @@ const supportedIcons = {
   webpack: SiWebpack,
   next: SiNextdotjs,
   story: SiStoryblok,
+  sass: SiSass,
+  styled: SiStyledcomponents,
+  eslint: SiEslint,
 };
 
 const iconSize = {
