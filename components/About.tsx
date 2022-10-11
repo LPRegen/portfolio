@@ -38,14 +38,14 @@ export const AboutMe = () => {
 
       <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
         <Title as="h3">Technologies</Title>
-        <div className="text-center grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4 xl:grid-cols-4">
+        <div className="text-center grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">
           <Technology
             icon={<Icon iconName="javascript" aria-hidden />}
-            title={'JS'}
+            title={'JavaScript'}
           />
           <Technology
             icon={<Icon iconName="typescript" aria-hidden />}
-            title={'TS'}
+            title={'TypeScript'}
           />
           <Technology
             icon={<Icon iconName="react" aria-hidden />}
@@ -70,7 +70,7 @@ export const AboutMe = () => {
           />
           <Technology
             icon={<Icon iconName="tailwind" aria-hidden />}
-            title="Tailwind"
+            title="Tailwind CSS"
           />
           <Technology
             icon={<Icon iconName="story" aria-hidden />}
