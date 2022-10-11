@@ -46,7 +46,7 @@ export const Projects = () => {
     'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato';
 
   const Links = ({ live, repo }: { live: string; repo: string }) => {
-    const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-3';
+    const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-3 text-lg';
     return (
       <div className="grid grid-cols-2 gap-12 mt-4">
         <Link href={live}>
@@ -88,15 +88,13 @@ export const Projects = () => {
                 />
               </div>
               <div className="flex flex-col justify-between gap-4 items-center px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
-                <Title as="h3" className="w-full">
+                <Title as="h3" className="w-full text-xl">
                   {name}
                 </Title>
                 <Paragraph className="text-secondary-800">
                   {description}
                 </Paragraph>
-                <Paragraph>
-                  <i className="text-secondary-600">{technologies}</i>
-                </Paragraph>
+                <i className="text-secondary-500">{technologies}</i>
                 <Links repo={repo} live={live} />
               </div>
             </div>
