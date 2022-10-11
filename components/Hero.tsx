@@ -10,13 +10,11 @@ export const Hero = () => {
 
   return (
     <div className={heroStyles}>
-      <Paragraph className={`${textStyles} font-lato`}>
-        Hi, my name is
-      </Paragraph>
+      <Paragraph className={`${textStyles}`}>Hi, my name is</Paragraph>
       <Title as="h1" className="text-hero font-montserrat">
         Manuel Escribano
       </Title>
-      <Paragraph className={`${textStyles} max-w-[740px] font-lato`}>
+      <Paragraph className={`${textStyles} max-w-[740px]`}>
         Self taught frontend developer looking to make a positive impact in the
         life of people through technology.
       </Paragraph>
