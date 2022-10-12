@@ -47,7 +47,10 @@ const Navbar = () => {
         as="div"
         className={`${wrapperStyle} md:hidden lg:hidden xl:hidden 2xl:hidden`}
       >
-        <Menu.Button className="px-3 py-2 my-1 focus:bg-gray-100 rounded-md">
+        <Menu.Button
+          className="px-3 py-2 my-1 focus:bg-gray-100 rounded-md"
+          aria-label="Menu Items"
+        >
           <Icon iconName="menu" size="large" />
         </Menu.Button>
         <Menu.Items
