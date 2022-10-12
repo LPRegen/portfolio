@@ -51,7 +51,6 @@ export const Projects = () => {
       <div className="grid grid-cols-2 gap-12 mt-4">
         <Link href={live}>
           <a
-            target="_blank"
             title="Check the live version of this project."
             className={anchorStyle}
           >
@@ -61,7 +60,6 @@ export const Projects = () => {
         </Link>
         <Link href={repo}>
           <a
-            target="_blank"
             title="Check the repository of this project."
             className={anchorStyle}
           >
@@ -85,6 +83,7 @@ export const Projects = () => {
                   alt={altImg}
                   layout="fill"
                   objectFit="contain"
+                  placeholder="blur"
                 />
               </div>
               <div className="flex flex-col justify-between gap-4 items-center px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
