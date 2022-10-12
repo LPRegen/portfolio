@@ -61,7 +61,7 @@ export const Icon = ({
   'aria-hidden': ariaHidden = true,
   iconName,
   size = 'medium',
-  className,
+  className = '',
 }: IconProps) => {
   const SelectedIcon = supportedIcons[iconName];
 
