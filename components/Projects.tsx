@@ -94,7 +94,7 @@ export const Projects = () => {
                 <Paragraph className="text-secondary-800">
                   {description}
                 </Paragraph>
-                <i className="text-secondary-500">{technologies}</i>
+                <i className="text-secondary-600">{technologies}</i>
                 <Links repo={repo} live={live} />
               </div>
             </div>
