@@ -10,7 +10,7 @@ interface SectionWrapperProps {
 export const SectionWrapper = ({
   title,
   children,
-  className,
+  className = '',
   id,
 }: SectionWrapperProps) => {
   const wrapperStyle = 'grid gap-12 lg:gap-16';
