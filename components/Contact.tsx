@@ -36,7 +36,7 @@ export function ContactForm() {
       <Paragraph className="max-w-3xl xl:ml-8 2xl:ml-12">
         Currently I am looking for a position as a frontend developer, if you
         have any question or just want to chat feel free to send me a message
-        and I will get back to you soon!
+        and I will get back to you soon as I can!
       </Paragraph>
     );
   };
