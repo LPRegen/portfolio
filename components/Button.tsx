@@ -15,10 +15,10 @@ interface ButtonProps
 export const Button = ({
   children,
   variant,
-  className,
+  className = '',
   disabled,
   ...props
-}: ButtonProps) => {
+}: ButtonProps): JSX.Element => {
   const disabledStyles = disabled
     ? 'disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed'
     : '';
