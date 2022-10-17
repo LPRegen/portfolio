@@ -1,13 +1,13 @@
-import Link from 'next/link';
 import { Menu } from '@headlessui/react';
 import { Icon } from './Icons';
+import { CustomLink } from './CustomLink';
 
 interface Item {
   name: string;
   href: string;
 }
 
-const itemList = [
+const itemList: Array<Item> = [
   { name: 'About me', href: '/#about-me' },
   { name: 'Projects', href: '/#projects' },
   { name: 'Contact', href: '/#contact' },
@@ -22,14 +22,14 @@ const Navbar = () => {
       <Menu.Item>
         {({ active }) => (
           <div>
-            <Link href={item.href}>
-              <a
-                className={`${navItem} ${active && 'bg-secondary-300'}`}
-                title={item.name}
-              >
-                {item.name}
-              </a>
-            </Link>
+            <CustomLink
+              href={item.href}
+              active={active}
+              className={navItem}
+              title={item.name}
+            >
+              {item.name}
+            </CustomLink>
           </div>
         )}
       </Menu.Item>
@@ -40,6 +40,7 @@ const Navbar = () => {
   const mdStyles = 'md:gap-8 md:flex md:items-center md:px-28';
 
   // TODO close menu when an item is clicked.
+  // TODO Add aria-hidden on Menu or div depending the resolution.
 
   return (
     <nav className="font-lato">
@@ -62,15 +63,19 @@ const Navbar = () => {
           ))}
         </Menu.Items>
       </Menu>
+
       <div
         className={`hidden h-14 ${wrapperStyle} ${mdStyles} lg:px-36 xl:px-56 2xl:px-64`}
       >
         {itemList.map((item) => (
-          <Link href={item.href} key={item.name}>
-            <a className={navItem} title={item.name}>
-              {item.name}
-            </a>
-          </Link>
+          <CustomLink
+            key={item.name}
+            href={item.href}
+            className={navItem}
+            title={item.name}
+          >
+            {item.name}
+          </CustomLink>
         ))}
       </div>
     </nav>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { CustomLink } from './CustomLink';
 import { Icon } from './Icons';
 
 export default function ScrollToTop() {
@@ -20,10 +20,8 @@ export default function ScrollToTop() {
   }`;
 
   return (
-    <Link href="/">
-      <a className={`${scrollStyles}`} title="Scroll to top.">
-        <Icon iconName="arrowUp" size="large" />
-      </a>
-    </Link>
+    <CustomLink href="/" className={`${scrollStyles}`} title="Scroll to top.">
+      <Icon iconName="arrowUp" size="large" />
+    </CustomLink>
   );
 }

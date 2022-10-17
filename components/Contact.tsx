@@ -3,7 +3,7 @@ import { SectionWrapper } from './Wrapper';
 import { Button } from './Button';
 import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
-import Link from 'next/link';
+import { CustomLink } from './CustomLink';
 
 export function ContactForm(): JSX.Element {
   const [state, handleSubmit] = useForm('mnqwwopk');
@@ -103,16 +103,15 @@ export function ContactForm(): JSX.Element {
   const SocialNetworks = (): JSX.Element => {
     return (
       <div className="flex flex-col gap-10 pr-4 pt-12 md:pr-8 lg:pr-12">
-        <Link href="https://www.linkedin.com/in/manuel-escribano-lpregen/">
-          <a title="My LinkedIn profile">
-            <Icon iconName="linkedin" size="large" />
-          </a>
-        </Link>
-        <Link href="https://github.com/LPRegen">
-          <a title="My GitHub profile">
-            <Icon iconName="github" size="large" />
-          </a>
-        </Link>
+        <CustomLink
+          href="https://www.linkedin.com/in/manuel-escribano-lpregen/"
+          title="My LinkedIn profile"
+        >
+          <Icon iconName="linkedin" size="large" />
+        </CustomLink>
+        <CustomLink href="https://github.com/LPRegen" title="My GitHub profile">
+          <Icon iconName="github" size="large" />
+        </CustomLink>
       </div>
     );
   };

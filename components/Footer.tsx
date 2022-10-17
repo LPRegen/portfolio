@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { CustomLink } from './CustomLink';
 import { Paragraph } from './Paragraph';
 
 interface Items {
@@ -19,11 +19,13 @@ export const Footer = () => {
 
   const Sections = ({ item }: { item: Items }) => (
     <li>
-      <Link href={item.href}>
-        <a className={footerItem} title={`Go to ${item.name} section`}>
-          {item.name}
-        </a>
-      </Link>
+      <CustomLink
+        href={item.href}
+        className={footerItem}
+        title={`Go to ${item.name} section`}
+      >
+        {item.name}
+      </CustomLink>
     </li>
   );
 

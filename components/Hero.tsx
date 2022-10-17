@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { CustomLink } from './CustomLink';
 import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
 
@@ -18,9 +18,13 @@ export const Hero = () => {
         Self taught frontend developer looking to make a positive impact in the
         life of people through technology.
       </Paragraph>
-      <Link href="#contact">
-        <a className={`${contactStyles} font-lato`}>Contact me</a>
-      </Link>
+      <CustomLink
+        href="#contact"
+        className={`${contactStyles} font-lato`}
+        title={'Contact me'}
+      >
+        Contact me
+      </CustomLink>
     </div>
   );
 };

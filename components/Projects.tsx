@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
+import { CustomLink } from './CustomLink';
 import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
@@ -23,7 +23,7 @@ const projectList: Project[] = [
   {
     name: 'Ola - Work In Progress',
     description:
-      'The purpose of this app is to improve and facilitate the administration of events. Different speakers can submit talks requests, the event administrator will review them and the speaker will be notified with the final decision of the administrator.',
+      "The purpose of this app is to improve and facilitate the administration of events. Different speakers can submit talks requests, the event administrator will review it and the speaker will be notified with the administrator's decision.",
     technologies: 'Built with TypeScript, Next JS, Tailwind CSS, Storybook.',
     live: 'https://water-call-for-papers.vercel.app/',
     repo: 'https://github.com/frontendcafe/water-call-for-papers',
@@ -63,24 +63,22 @@ export const Projects = (): JSX.Element => {
     const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-3 text-lg';
     return (
       <div className="grid grid-cols-2 gap-12 mt-4">
-        <Link href={live}>
-          <a
-            title="Check the live version of this project."
-            className={anchorStyle}
-          >
-            Live
-            <Icon iconName="link" aria-hidden />
-          </a>
-        </Link>
-        <Link href={repo}>
-          <a
-            title="Check the repository of this project."
-            className={anchorStyle}
-          >
-            GitHub
-            <Icon iconName="github" aria-hidden />
-          </a>
-        </Link>
+        <CustomLink
+          href={live}
+          title="Check the live version of this project."
+          className={anchorStyle}
+        >
+          Live
+          <Icon iconName="link" aria-hidden />
+        </CustomLink>
+        <CustomLink
+          href={repo}
+          title="Check the repository of this project."
+          className={anchorStyle}
+        >
+          GitHub
+          <Icon iconName="github" aria-hidden />
+        </CustomLink>
       </div>
     );
   };
