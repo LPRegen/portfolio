@@ -5,8 +5,9 @@ import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
 import { SectionWrapper } from './Wrapper';
 
-import weatherApp from '../public/weather-app.jpg';
+import olaApp from '../public/ola-home.jpg';
 import resumeBuilder from '../public/resume-builder.jpg';
+import weatherApp from '../public/weather-app.jpg';
 
 type Project = {
   name: string;
@@ -20,10 +21,20 @@ type Project = {
 
 const projectList: Project[] = [
   {
+    name: 'Ola - Work In Progress',
+    description:
+      'The purpose of this app is to improve and facilitate the administration of events. Different speakers can submit talks requests, the event administrator will review them and the speaker will be notified with the final decision of the administrator.',
+    technologies: 'Built with TypeScript, Next JS, Tailwind CSS, Storybook.',
+    live: 'https://water-call-for-papers.vercel.app/',
+    repo: 'https://github.com/frontendcafe/water-call-for-papers',
+    image: olaApp,
+    altImg: 'Ola mockup',
+  },
+  {
     name: 'Resume builder',
     description:
       'First approach to React JS! This project was made with class components, lyfecicle methods, routing and much more! The user after completing the required fields will be able to download its Resume as a PDF file. Bye bye DOM manipulation with Vanilla.',
-    technologies: 'Built using React.js and Styled Components',
+    technologies: 'Built with React JS and Styled Components.',
     live: 'https://resume-builder-lime.vercel.app/',
     repo: 'https://github.com/LPRegen/resume-builder',
     image: resumeBuilder,
@@ -33,7 +44,7 @@ const projectList: Project[] = [
     name: 'Weather App',
     description:
       'The main purpouse was to practice API calls, use asynchronous code with promises and put in practice ES6+ features. You will be able to find the forecast for a specific city. The used API is from OpenWeather. ',
-    technologies: 'Built using JS, Webpack, SCSS',
+    technologies: 'Built with JS, Webpack, SCSS.',
     live: 'https://lpregen.github.io/weather-app/',
     repo: 'https://github.com/LPRegen/weather-app',
     image: weatherApp,
@@ -41,11 +52,14 @@ const projectList: Project[] = [
   },
 ];
 
-export const Projects = () => {
+export const Projects = (): JSX.Element => {
   const containerStyles =
     'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato';
 
-  const Links = ({ live, repo }: { live: string; repo: string }) => {
+  const Links = ({
+    live,
+    repo,
+  }: Pick<Project, 'live' | 'repo'>): JSX.Element => {
     const anchorStyle = 'flex gap-2 text-primary-800/90 underline p-3 text-lg';
     return (
       <div className="grid grid-cols-2 gap-12 mt-4">
