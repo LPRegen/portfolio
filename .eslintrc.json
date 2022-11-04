@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  "extends": ["next", "prettier"],
+  "rules": {
+    "no-console": 2,
+    "prefer-const": 2,
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 0,
+    "unused-imports/no-unused-imports": 2,
+    "unused-imports/no-unused-vars": [
+      2,
+      { "vars": "all", "args": "after-used" }
+    ]
+  }
 }
