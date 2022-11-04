@@ -1,9 +1,33 @@
 import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
 import { Technology } from './Technologies';
-import { Icon } from './Icons';
 import { SectionWrapper } from './Wrapper';
 import { Bold } from './Span';
+
+interface Techs {
+  iconName: string;
+  title: string;
+}
+
+type TechList = Array<Techs>;
+
+const techList: TechList = [
+  { iconName: 'javascript', title: 'Javascript' },
+  { iconName: 'typescript', title: 'TypeScript' },
+  { iconName: 'react', title: 'React' },
+  { iconName: 'next', title: 'Next JS' },
+  { iconName: 'html', title: 'HTML' },
+  { iconName: 'css', title: 'CSS' },
+  { iconName: 'styled', title: 'Styled Components' },
+  { iconName: 'sass', title: 'SASS' },
+  { iconName: 'tailwind', title: 'Tailwind CSS' },
+  { iconName: 'story', title: 'Storybook' },
+  { iconName: 'webpack', title: 'Webpack' },
+  { iconName: 'eslint', title: 'ESLint' },
+  { iconName: 'jest', title: 'Jest' },
+  { iconName: 'npm', title: 'NPM' },
+  { iconName: 'git', title: 'Git' },
+];
 
 export const AboutMe = (): JSX.Element => {
   return (
@@ -39,65 +63,9 @@ export const AboutMe = (): JSX.Element => {
       <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
         <Title as="h3">Technologies</Title>
         <div className="text-center grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">
-          {/* TODO Refactor */}
-
-          <Technology
-            icon={<Icon iconName="javascript" aria-hidden />}
-            title={'JavaScript'}
-          />
-          <Technology
-            icon={<Icon iconName="typescript" aria-hidden />}
-            title={'TypeScript'}
-          />
-          <Technology
-            icon={<Icon iconName="react" aria-hidden />}
-            title={'React'}
-          />
-          <Technology
-            icon={<Icon iconName="next" aria-hidden />}
-            title={'Next JS'}
-          />
-          <Technology
-            icon={<Icon iconName="html" aria-hidden />}
-            title="HTML"
-          />
-          <Technology icon={<Icon iconName="css" aria-hidden />} title="CSS" />
-          <Technology
-            icon={<Icon iconName="styled" aria-hidden />}
-            title="Styled Components"
-          />
-          <Technology
-            icon={<Icon iconName="sass" aria-hidden />}
-            title="SASS"
-          />
-          <Technology
-            icon={<Icon iconName="tailwind" aria-hidden />}
-            title="Tailwind CSS"
-          />
-          <Technology
-            icon={<Icon iconName="story" aria-hidden />}
-            title="Storybook"
-          />
-          <Technology
-            icon={<Icon iconName="webpack" aria-hidden />}
-            title="Webpack"
-          />
-          <Technology
-            icon={<Icon iconName="eslint" aria-hidden />}
-            title={'ESLint'}
-          />
-          <Technology
-            icon={<Icon iconName="jest" aria-hidden />}
-            title={'Jest'}
-          />
-          <Technology
-            icon={<Icon iconName="npm" aria-hidden />}
-            title={'NPM'}
-          />
-          <Technology
-            icon={<Icon iconName="git" aria-hidden />}
-            title={'Git'}
-          />
+          {techList.map(({ iconName, title }) => (
+            <Technology icon={iconName} title={title} key={iconName} />
+          ))}
         </div>
       </div>
     </SectionWrapper>
