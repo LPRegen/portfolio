@@ -19,7 +19,7 @@ import {
   SiEslint,
 } from 'react-icons/si';
 
-const supportedIcons = {
+const SupportedIcons = {
   arrowUp: HiArrowSmUp,
   menu: HiMenu,
   logo: GiPoolTriangle,
@@ -52,7 +52,7 @@ const iconSize = {
 
 interface IconProps {
   'aria-hidden'?: false | true;
-  iconName: keyof typeof supportedIcons;
+  iconName: keyof typeof SupportedIcons | string;
   size?: keyof typeof iconSize;
   className?: string;
 }
@@ -63,7 +63,8 @@ export const Icon = ({
   size = 'medium',
   className = '',
 }: IconProps) => {
-  const SelectedIcon = supportedIcons[iconName];
+  // @ts-ignore
+  const SelectedIcon = SupportedIcons[iconName];
 
   return (
     <SelectedIcon
