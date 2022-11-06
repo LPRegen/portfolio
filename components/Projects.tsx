@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from "next/legacy/image";
 import { CustomLink } from './CustomLink';
 import { Title } from './Heading';
 import { Paragraph } from './Paragraph';
