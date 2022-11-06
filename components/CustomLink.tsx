@@ -18,10 +18,8 @@ export const CustomLink = ({
   const activeProp = active ? `${active && 'bg-secondary-300'}` : '';
 
   return (
-    <Link href={href}>
-      <a title={title} className={`${activeProp} ${className} `}>
-        {children}
-      </a>
+    <Link href={href} className={`${activeProp} ${className}`} title={title}>
+      {children}
     </Link>
   );
 };
