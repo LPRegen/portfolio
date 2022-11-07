@@ -16,6 +16,7 @@ export function ContactForm(): JSX.Element {
     } else if (state.succeeded) {
       formState = 'Sended!';
     }
+
     const sendingStyle = (): string =>
       state.submitting ? 'bg-primary-400/60' : '';
     const buttonStyle: string = `${sendingStyle()} rounded-lg text-secondary-800 bg-primary-200/50 p-4 disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed`;
@@ -31,14 +32,6 @@ export function ContactForm(): JSX.Element {
       </Button>
     );
   };
-
-  const Legend = (): JSX.Element => (
-    <Paragraph className="max-w-3xl xl:ml-8 2xl:ml-12">
-      Currently I am looking for a position as a frontend developer, if you have
-      any question or just want to chat feel free to send me a message and I
-      will get back to you soon as I can!
-    </Paragraph>
-  );
 
   const Form = (): JSX.Element => {
     const labelStyle = 'text-sm text-secondary-900';
@@ -100,22 +93,6 @@ export function ContactForm(): JSX.Element {
     );
   };
 
-  const SocialNetworks = (): JSX.Element => {
-    return (
-      <div className="flex flex-col gap-10 pr-4 pt-12 md:pr-8 lg:pr-12">
-        <CustomLink
-          href="https://www.linkedin.com/in/manuel-escribano-lpregen/"
-          title="My LinkedIn profile"
-        >
-          <Icon iconName="linkedin" size="large" />
-        </CustomLink>
-        <CustomLink href="https://github.com/LPRegen" title="My GitHub profile">
-          <Icon iconName="github" size="large" />
-        </CustomLink>
-      </div>
-    );
-  };
-
   return (
     <SectionWrapper id="contact" title="Contact">
       <Legend />
@@ -126,3 +103,27 @@ export function ContactForm(): JSX.Element {
     </SectionWrapper>
   );
 }
+
+const Legend = (): JSX.Element => (
+  <Paragraph className="max-w-3xl xl:ml-8 2xl:ml-12">
+    Currently I am looking for a position as a frontend developer, if you have
+    any question or just want to chat feel free to send me a message and I will
+    get back to you soon as I can!
+  </Paragraph>
+);
+
+const SocialNetworks = (): JSX.Element => {
+  return (
+    <div className="flex flex-col gap-10 pr-4 pt-12 md:pr-8 lg:pr-12">
+      <CustomLink
+        href="https://www.linkedin.com/in/manuel-escribano-lpregen/"
+        title="My LinkedIn profile"
+      >
+        <Icon iconName="linkedin" size="large" />
+      </CustomLink>
+      <CustomLink href="https://github.com/LPRegen" title="My GitHub profile">
+        <Icon iconName="github" size="large" />
+      </CustomLink>
+    </div>
+  );
+};
