@@ -8,7 +8,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity build"
+    "test": "sanity check",
+    "build": "sanity build public -y"
   },
   "keywords": [
     "sanity"
@@ -24,9 +25,8 @@
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
-    "styled-components": "^5.2.0"
-  },
-  "devDependencies": {
+    "styled-components": "^5.2.0",
     "eslint": "^8.26.0"
-  }
+  },
+  "devDependencies": {}
 }
