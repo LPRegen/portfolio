@@ -2,7 +2,7 @@
   "name": "lpregen-blog",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.",
   "main": "package.json",
   "author": "Manuel Escribano <manuel.escribano.051@gmail.com>",
   "license": "UNLICENSED",
@@ -28,5 +28,13 @@
     "styled-components": "^5.2.0",
     "eslint": "^8.26.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LPRegen/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LPRegen/portfolio/issues"
+  },
+  "homepage": "https://github.com/LPRegen/portfolio#readme"
 }
