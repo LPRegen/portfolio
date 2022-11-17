@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { Menu } from '@headlessui/react';
-import { Icon } from './Icons';
-import { CustomLink } from './CustomLink';
+import { useEffect, useState } from "react";
+import { Menu } from "@headlessui/react";
+import { Icon } from "./Icons";
+import { CustomLink } from "./CustomLink";
 
 interface Item {
   name: string;
@@ -9,16 +9,17 @@ interface Item {
 }
 
 const itemList: Array<Item> = [
-  { name: 'About me', href: '/#about-me' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Contact', href: '/#contact' },
+  { name: "About me", href: "/#about-me" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const navItem =
-  'block px-3 py-2 my-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100';
+  "block px-3 py-2 my-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100";
 
-const wrapperStyle = 'absolute w-full z-50 border-b shadow-lg';
-const mdStyles = 'md:gap-8 md:flex md:items-center md:px-28';
+const wrapperStyle = "absolute w-full z-50 border-b shadow-lg";
+const mdStyles = "md:gap-8 md:flex md:items-center md:px-28";
 
 const Navbar = () => {
   const [windowDimensions, setWindowDimensions] = useState<boolean | null>(
@@ -26,12 +27,12 @@ const Navbar = () => {
   );
 
   const checkWindowDimensions = () =>
-    setWindowDimensions(window.matchMedia('(max-width: 768px)').matches);
+    setWindowDimensions(window.matchMedia("(max-width: 768px)").matches);
 
   useEffect(() => {
     checkWindowDimensions();
-    window.addEventListener('resize', checkWindowDimensions);
-    return () => window.removeEventListener('resize', checkWindowDimensions);
+    window.addEventListener("resize", checkWindowDimensions);
+    return () => window.removeEventListener("resize", checkWindowDimensions);
   }, []);
 
   return (

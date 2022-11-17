@@ -1,8 +1,8 @@
-import { Title } from './Heading';
-import { Paragraph } from './Paragraph';
-import { Technology } from './Technologies';
-import { SectionWrapper } from './Wrapper';
-import { Bold } from './Span';
+import { Heading } from "./Heading";
+import { Paragraph } from "./Paragraph";
+import { Technology } from "./Technologies";
+import { SectionWrapper } from "./Wrapper";
+import { Bold } from "./Span";
 
 interface Techs {
   iconName: string;
@@ -12,21 +12,21 @@ interface Techs {
 type TechList = Array<Techs>;
 
 const techList: TechList = [
-  { iconName: 'javascript', title: 'Javascript' },
-  { iconName: 'typescript', title: 'TypeScript' },
-  { iconName: 'react', title: 'React' },
-  { iconName: 'next', title: 'Next JS' },
-  { iconName: 'html', title: 'HTML' },
-  { iconName: 'css', title: 'CSS' },
-  { iconName: 'styled', title: 'Styled Components' },
-  { iconName: 'sass', title: 'SASS' },
-  { iconName: 'tailwind', title: 'Tailwind CSS' },
-  { iconName: 'story', title: 'Storybook' },
-  { iconName: 'webpack', title: 'Webpack' },
-  { iconName: 'eslint', title: 'ESLint' },
-  { iconName: 'jest', title: 'Jest' },
-  { iconName: 'npm', title: 'NPM' },
-  { iconName: 'git', title: 'Git' },
+  { iconName: "javascript", title: "Javascript" },
+  { iconName: "typescript", title: "TypeScript" },
+  { iconName: "react", title: "React" },
+  { iconName: "next", title: "Next JS" },
+  { iconName: "html", title: "HTML" },
+  { iconName: "css", title: "CSS" },
+  { iconName: "styled", title: "Styled Components" },
+  { iconName: "sass", title: "SASS" },
+  { iconName: "tailwind", title: "Tailwind CSS" },
+  { iconName: "story", title: "Storybook" },
+  { iconName: "webpack", title: "Webpack" },
+  { iconName: "eslint", title: "ESLint" },
+  { iconName: "jest", title: "Jest" },
+  { iconName: "npm", title: "NPM" },
+  { iconName: "git", title: "Git" },
 ];
 
 export const AboutMe = (): JSX.Element => {
@@ -54,14 +54,14 @@ export const AboutMe = (): JSX.Element => {
           Test-driven Development (<Bold>TDD</Bold>) are familiar to me.
         </Paragraph>
         <Paragraph>
-          Some of the technologies I use are on a daily basis are{' '}
-          <Bold>React</Bold>, <Bold>JavaScript</Bold> and{' '}
+          Some of the technologies I use are on a daily basis are{" "}
+          <Bold>React</Bold>, <Bold>JavaScript</Bold> and{" "}
           <Bold>TypeScript</Bold>.
         </Paragraph>
       </div>
 
       <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
-        <Title as="h3">Technologies</Title>
+        <Heading as="h3">Technologies</Heading>
         <div className="text-center grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">
           {techList.map(({ iconName, title }) => (
             <Technology icon={iconName} title={title} key={iconName} />
