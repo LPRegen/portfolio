@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url';
 
 const builder = imageUrlBuilder(config);
 
-function urlFor(source) {
+function urlFor(source: string) {
   return builder.image(source);
 }
 
