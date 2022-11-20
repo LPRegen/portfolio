@@ -6,6 +6,16 @@ const nextConfig = {
     locales: ['en'],
     defaultLocale: 'en',
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/images/ci2u4db7/production/**',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
