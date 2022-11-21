@@ -30,7 +30,6 @@
     "react-dom": "^17.0",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LPRegen/portfolio.git"
@@ -38,5 +37,6 @@
   "bugs": {
     "url": "https://github.com/LPRegen/portfolio/issues"
   },
-  "homepage": "https://github.com/LPRegen/portfolio#readme"
+  "homepage": "https://github.com/LPRegen/portfolio#readme",
+  "packageManager": "yarn@3.3.0"
 }
