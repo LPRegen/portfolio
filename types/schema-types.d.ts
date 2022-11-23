@@ -20,6 +20,9 @@ export interface Post {
   };
   body: [
     {
+      _type: string;
+      code?: string;
+      language?: string;
       children: [
         {
           text: string;
