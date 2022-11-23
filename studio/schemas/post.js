@@ -46,9 +46,10 @@ export default {
       type: 'datetime',
     },
     {
-      name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      name: 'body',
+      type: 'array',
+      of: [{ type: 'block' }, { type: 'code' }],
     },
   ],
 
