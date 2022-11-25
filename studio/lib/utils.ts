@@ -1,10 +1,10 @@
-import { config } from '../../sanity';
 import imageUrlBuilder from '@sanity/image-url';
+import { config } from '../../sanity';
 
 const builder = imageUrlBuilder(config);
 
-function urlFor(source: string) {
-  return builder.image(source);
+function urlForImage(source: string) {
+  return builder.image(source).auto('format').fit('max');
 }
 
-export default urlFor;
+export default urlForImage;
