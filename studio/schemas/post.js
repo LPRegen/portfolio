@@ -12,6 +12,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'description',
+      title: 'Post description',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
