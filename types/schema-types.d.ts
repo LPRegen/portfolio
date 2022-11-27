@@ -15,6 +15,7 @@ export interface Post {
       _ref: string;
     };
   };
+  imgAlt: string;
   slug: {
     current: string;
   };
