@@ -40,6 +40,11 @@ export default {
       },
     },
     {
+      name: 'imgAlt',
+      title: 'Img alt att',
+      type: 'string',
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
