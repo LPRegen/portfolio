@@ -35,7 +35,7 @@ export const BlogIndex = ({
   return (
     <div className={`grid gap-4 ${styles.container[variant]}`}>
       <CustomLink
-        href={`/${slug.current}`}
+        href={`/blog/${slug.current}`}
         title={`Read ${title}`}
         className={`relative ${styles.containerImg[variant]}`}
       >
@@ -48,7 +48,10 @@ export const BlogIndex = ({
         />
       </CustomLink>
       <div className={`grid gap-2 ${styles.textContainer[variant]}`}>
-        <CustomLink href={`/${slug.current}`} className="max-w-fit underline">
+        <CustomLink
+          href={`/blog/${slug.current}`}
+          className="max-w-fit underline"
+        >
           <Heading as={variant === 'hero' ? 'h2' : 'h3'}>{title}</Heading>
         </CustomLink>
         <p className="font-normal">{description}</p>
