@@ -1,6 +1,10 @@
 export interface Author {
   name: string;
-  image: string;
+  image: {
+    asset: {
+      _ref: string;
+    };
+  };
   bio: string;
 }
 
