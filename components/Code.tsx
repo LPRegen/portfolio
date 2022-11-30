@@ -21,7 +21,7 @@ export const Code = ({ language, code }: CodeProps) => {
   }, []);
 
   return (
-    <div>
+    <div className="overflow-auto">
       <pre className="line-numbers">
         <code className={`lang-${language}`}>{code}</code>
       </pre>
