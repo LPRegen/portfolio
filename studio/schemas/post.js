@@ -59,7 +59,7 @@ export default {
       title: 'Body',
       name: 'body',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'code' }],
+      of: [{ type: 'block' }, { name: 'codeBlock', type: 'code' }],
     },
   ],
 
