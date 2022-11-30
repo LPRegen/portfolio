@@ -21,11 +21,10 @@ export const Code = ({ language, code }: CodeProps) => {
   }, []);
 
   return (
-    <div className="bg-red-200">
+    <div>
       <pre className="line-numbers">
         <code className={`lang-${language}`}>{code}</code>
       </pre>
-      <p>Language: {language}</p>
     </div>
   );
 };
