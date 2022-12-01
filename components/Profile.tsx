@@ -11,7 +11,8 @@ export const Profile = ({ name, image, lastUpdate }: ProfileProps) => {
     <div className="flex items-center justify-start">
       <div className="relative h-10 w-10">
         <Image
-          alt={'Manuel Escribano is picture'}
+          alt={''}
+          aria-hidden="true"
           src={urlForImage(image.asset._ref).url()}
           className={`object-cover rounded-full`}
           fill
