@@ -9,15 +9,14 @@ interface ProfileProps extends Omit<Author, 'bio'> {
 export const Profile = ({ name, image, lastUpdate }: ProfileProps) => {
   return (
     <div className="flex items-center justify-start">
-      <div className="relative h-10 w-10">
-        <Image
-          alt={''}
-          aria-hidden="true"
-          src={urlForImage(image.asset._ref).url()}
-          className={`object-cover rounded-full`}
-          fill
-        />
-      </div>
+      <Image
+        alt={''}
+        aria-hidden="true"
+        src={urlForImage(image.asset._ref).url()}
+        className={`rounded-full`}
+        width={40}
+        height={40}
+      />
       <div className="grid ml-3">
         <p className="text-orange-700">{name}</p>
         <p className="font-light text-xs">
