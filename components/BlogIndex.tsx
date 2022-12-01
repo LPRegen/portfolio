@@ -23,7 +23,7 @@ export const BlogIndex = ({
       regular: 'lg:gap-6 self-start',
     },
     containerImg: {
-      hero: 'h-48 sm:h-56 md:h-64 lg:h-[450px]',
+      hero: 'h-56 sm:h-64 md:h-72 lg:h-[450px]',
       regular: 'h-40 sm:h-48 md:h-56 lg:h-80',
     },
     textContainer: {
