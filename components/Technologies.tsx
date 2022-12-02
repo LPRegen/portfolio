@@ -1,5 +1,5 @@
-import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
+import { Paragraph } from './Paragraph';
 
 interface TechnologiesProps {
   title: string;
