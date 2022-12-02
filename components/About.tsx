@@ -31,7 +31,7 @@ const techList: TechList = [
 
 export const AboutMe = (): JSX.Element => {
   return (
-    <Container id="about-me" title="About me">
+    <Container variant="section" id="about-me" title="About me">
       <div className="grid gap-2">
         <Paragraph>
           In my work experience I have always enjoyed to provide solutions

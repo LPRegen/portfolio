@@ -94,7 +94,7 @@ export function ContactForm(): JSX.Element {
   };
 
   return (
-    <Container id="contact" title="Contact">
+    <Container variant="section" id="contact" title="Contact">
       <Legend />
       <div className="flex justify-center">
         <SocialNetworks />

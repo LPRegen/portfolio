@@ -81,7 +81,7 @@ export const Projects = (): JSX.Element => {
     'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato';
 
   return (
-    <Container id="projects" title="Projects">
+    <Container variant="section" id="projects" title="Projects">
       {projectList.map(
         ({ name, image, altImg, description, technologies, repo, live }) => {
           return (
