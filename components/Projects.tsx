@@ -1,9 +1,9 @@
 import Image, { StaticImageData } from 'next/legacy/image';
+import { Container } from './Container';
 import { CustomLink } from './CustomLink';
 import { Heading } from './Heading';
-import { Paragraph } from './Paragraph';
 import { Icon } from './Icons';
-import { SectionWrapper } from './Wrapper';
+import { Paragraph } from './Paragraph';
 
 import olaApp from '../public/ola-home.jpg';
 import resumeBuilder from '../public/resume-builder.jpg';
@@ -81,7 +81,7 @@ export const Projects = (): JSX.Element => {
     'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato';
 
   return (
-    <SectionWrapper id="projects" title="Projects">
+    <Container id="projects" title="Projects">
       {projectList.map(
         ({ name, image, altImg, description, technologies, repo, live }) => {
           return (
@@ -109,6 +109,6 @@ export const Projects = (): JSX.Element => {
           );
         }
       )}
-    </SectionWrapper>
+    </Container>
   );
 };

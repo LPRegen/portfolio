@@ -1,19 +1,19 @@
-import { Heading } from "./Heading";
+import { Heading } from './Heading';
 
-interface SectionWrapperProps {
+interface ContainerProps {
   title: string;
   children: React.ReactNode;
   className?: string;
   id: string;
 }
 
-export const SectionWrapper = ({
+export const Container = ({
   title,
   children,
-  className = "",
+  className = '',
   id,
-}: SectionWrapperProps) => {
-  const wrapperStyle = "grid gap-12 lg:gap-16";
+}: ContainerProps) => {
+  const wrapperStyle = 'grid gap-12 lg:gap-16';
 
   return (
     <div id={id} className={`${wrapperStyle}`}>

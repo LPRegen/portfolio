@@ -1,9 +1,9 @@
 import { useForm, ValidationError } from '@formspree/react';
-import { SectionWrapper } from './Wrapper';
 import { Button } from './Button';
-import { Paragraph } from './Paragraph';
-import { Icon } from './Icons';
+import { Container } from './Container';
 import { CustomLink } from './CustomLink';
+import { Icon } from './Icons';
+import { Paragraph } from './Paragraph';
 
 export function ContactForm(): JSX.Element {
   const [state, handleSubmit] = useForm('mnqwwopk');
@@ -94,13 +94,13 @@ export function ContactForm(): JSX.Element {
   };
 
   return (
-    <SectionWrapper id="contact" title="Contact">
+    <Container id="contact" title="Contact">
       <Legend />
       <div className="flex justify-center">
         <SocialNetworks />
         <Form />
       </div>
-    </SectionWrapper>
+    </Container>
   );
 }
 
