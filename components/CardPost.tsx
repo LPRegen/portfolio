@@ -4,19 +4,19 @@ import { Post } from '../types/schema-types';
 import { CustomLink } from './CustomLink';
 import { Heading } from './Heading';
 
-interface BlogIndexProps
+interface CardPostProps
   extends Omit<Post, 'body' | '_createdAt' | '_id' | 'author'> {
   variant: 'hero' | 'regular';
 }
 
-export const BlogIndex = ({
+export const CardPost = ({
   title,
   description,
   slug,
   mainImage,
   imgAlt,
   variant,
-}: BlogIndexProps) => {
+}: CardPostProps) => {
   const styles = {
     container: {
       hero: 'lg:gap-8',
@@ -29,6 +29,23 @@ export const BlogIndex = ({
     textContainer: {
       hero: 'lg:gap-6',
       regular: 'lg:gap-4',
+    },
+    imgSizes: {
+      hero: `
+      (max-width: 640px) 80vw,
+      (max-width: 768px) 70vw,
+      (max-width: 1024px) 71vw,
+      (max-width: 1280px) 65vw,
+      (max-width: 1536px) 66vw,
+      70vw
+      `,
+      regular: `
+      (max-width: 640px) 80vw,
+      (max-width: 768px) 70vw,
+      (max-width: 1024px) 30.5vw,
+      (max-width: 1536px) 30vw,
+      31vw
+      `,
     },
   };
 
@@ -44,6 +61,7 @@ export const BlogIndex = ({
           src={urlForImage(mainImage.asset._ref).url()}
           fill
           className={`object-cover rounded-xl shadow-xl`}
+          sizes={styles.imgSizes[variant]}
           priority
         />
       </CustomLink>
