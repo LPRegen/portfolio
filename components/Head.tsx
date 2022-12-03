@@ -3,7 +3,7 @@ import Head from 'next/head';
 export const HeadComp = () => {
   return (
     <Head>
-      <title>Manuel Escribano {'>'} Frontend dev</title>
+      <title>Manuel Escribano `&gt;` Frontend dev</title>
       <meta
         name="description"
         content="Manuel Escribano, Frontend web developer"
