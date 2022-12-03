@@ -19,7 +19,7 @@ export const Container = ({
 
   return (
     <div id={id} className="grid gap-12 lg:gap-16 px-4">
-      <Heading as="h2" after className="pb-8 mt-8">
+      <Heading as="h2" after className="mt-8">
         {title}
       </Heading>
       <div className={`grid gap-12 lg:gap-16 px-4 ${postStyle} ${className}`}>
