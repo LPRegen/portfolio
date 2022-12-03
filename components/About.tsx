@@ -1,7 +1,7 @@
 import { Container } from './Container';
 import { Heading } from './Heading';
 import { Paragraph } from './Paragraph';
-import { Bold } from './Span';
+import { Bold } from './Bold';
 import { Technology } from './Technologies';
 
 interface Techs {
