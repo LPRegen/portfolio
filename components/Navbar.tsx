@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { Menu } from "@headlessui/react";
-import { Icon } from "./Icons";
-import { CustomLink } from "./CustomLink";
+import { Menu } from '@headlessui/react';
+import { useEffect, useState } from 'react';
+import { CustomLink } from './CustomLink';
+import { Icon } from './Icons';
 
 interface Item {
   name: string;
@@ -9,36 +9,51 @@ interface Item {
 }
 
 const itemList: Array<Item> = [
-  { name: "About me", href: "/#about-me" },
-  { name: "Projects", href: "/#projects" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/#contact" },
+  { name: 'Home', href: '/' },
+  { name: 'Blog', href: '/blog' },
 ];
 
 const navItem =
-  "block px-3 py-2 my-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100";
+  'block px-3 py-2 my-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-200/80 focus:bg-gray-200/80';
 
-const wrapperStyle = "absolute w-full z-50 border-b shadow-lg";
-const mdStyles = "md:gap-8 md:flex md:items-center md:px-28";
+const wrapperStyle = 'absolute w-full z-50 border-b shadow-lg';
 
-const Navbar = () => {
-  const [windowDimensions, setWindowDimensions] = useState<boolean | null>(
-    null
-  );
-
-  const checkWindowDimensions = () =>
-    setWindowDimensions(window.matchMedia("(max-width: 768px)").matches);
-
-  useEffect(() => {
-    checkWindowDimensions();
-    window.addEventListener("resize", checkWindowDimensions);
-    return () => window.removeEventListener("resize", checkWindowDimensions);
-  }, []);
-
+const MenuItem = ({ item }: { item: Item }) => {
   return (
-    <nav className="font-lato">
-      {windowDimensions ? <MenuNav /> : <DivNav />}
-    </nav>
+    <Menu.Item>
+      {({ active }) => (
+        <div>
+          <CustomLink
+            href={item.href}
+            active={active}
+            className={navItem}
+            title={item.name}
+          >
+            {item.name}
+          </CustomLink>
+        </div>
+      )}
+    </Menu.Item>
+  );
+};
+
+const DivNav = () => {
+  const mdStyles = 'md:gap-8 md:flex md:items-center md:px-28';
+  return (
+    <div
+      className={`hidden h-14 ${wrapperStyle} ${mdStyles} lg:px-36 xl:px-56 2xl:px-64`}
+    >
+      {itemList.map((item) => (
+        <CustomLink
+          key={item.name}
+          href={item.href}
+          className={navItem}
+          title={item.name}
+        >
+          {item.name}
+        </CustomLink>
+      ))}
+    </div>
   );
 };
 
@@ -64,40 +79,21 @@ const MenuNav = () => (
   </Menu>
 );
 
-const MenuItem = ({ item }: { item: Item }) => {
-  return (
-    <Menu.Item>
-      {({ active }) => (
-        <div>
-          <CustomLink
-            href={item.href}
-            active={active}
-            className={navItem}
-            title={item.name}
-          >
-            {item.name}
-          </CustomLink>
-        </div>
-      )}
-    </Menu.Item>
+const Navbar = () => {
+  const [windowDimensions, setWindowDimensions] = useState<boolean | null>(
+    null
   );
-};
 
-const DivNav = () => (
-  <div
-    className={`hidden h-14 ${wrapperStyle} ${mdStyles} lg:px-36 xl:px-56 2xl:px-64`}
-  >
-    {itemList.map((item) => (
-      <CustomLink
-        key={item.name}
-        href={item.href}
-        className={navItem}
-        title={item.name}
-      >
-        {item.name}
-      </CustomLink>
-    ))}
-  </div>
-);
+  const checkWindowDimensions = () =>
+    setWindowDimensions(window.matchMedia('(max-width: 768px)').matches);
+
+  useEffect(() => {
+    checkWindowDimensions();
+    window.addEventListener('resize', checkWindowDimensions);
+    return () => window.removeEventListener('resize', checkWindowDimensions);
+  }, []);
+
+  return <nav>{windowDimensions ? <MenuNav /> : <DivNav />}</nav>;
+};
 
 export default Navbar;
