@@ -8,7 +8,7 @@ export const Paragraph = ({
   className = '',
   ...props
 }: ParagraphProps) => (
-  <p {...props} className={`font-lato text-lg ${className}`}>
+  <p {...props} className={`text-lg ${className}`}>
     {children}
   </p>
 );

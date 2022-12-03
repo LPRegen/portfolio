@@ -39,10 +39,10 @@ const serializers = {
     </CustomLink>
   ),
   ul: ({ children }: { children: string }) => (
-    <ul className="font-lato ml-6 list-disc text-slate-800">{children}</ul>
+    <ul className="ml-6 list-disc text-slate-800">{children}</ul>
   ),
   ol: ({ children }: { children: string }) => (
-    <ol className="font-lato ml-6 list-decimal text-slate-800">{children}</ol>
+    <ol className="ml-6 list-decimal text-slate-800">{children}</ol>
   ),
 };
 

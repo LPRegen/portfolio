@@ -8,10 +8,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        montserrat: ['Montserrat'],
-        lato: ['Lato'],
-      },
       fontSize: {
         hero: 'clamp(1.5rem, 1.8852rem + 1.3456vw, 3.5rem)',
       },

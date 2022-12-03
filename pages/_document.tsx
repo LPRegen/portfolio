@@ -1,16 +1,9 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
     <Html>
-      <Head>
-        {/* TODO Implement @next/font */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@800&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <Head />
       <body>
         <Main />
         <NextScript />

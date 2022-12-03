@@ -17,16 +17,16 @@ export const Heading = ({
   let styles: string;
   switch (as) {
     case 'h1':
-      styles = 'font-extrabold text-4xl font-lato';
+      styles = 'font-extrabold text-4xl';
       break;
     case 'h2':
-      styles = 'font-bold text-3xl font-lato ';
+      styles = 'font-bold text-3xl ';
       break;
     case 'h3':
-      styles = 'font-semibold text-2xl font-lato ';
+      styles = 'font-semibold text-2xl ';
       break;
     case 'h4':
-      styles = 'font-bold text-xl font-lato ';
+      styles = 'font-bold text-xl ';
       break;
   }
 
