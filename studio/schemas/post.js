@@ -32,17 +32,31 @@ export default {
       to: { type: 'author' },
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'imgAlt',
-      title: 'Img alt att',
-      type: 'string',
+      name: 'postImage',
+      title: 'Post image',
+      type: 'object',
+      fields: [
+        {
+          name: 'imageUrl',
+          title: 'Image URL',
+          type: 'string',
+        },
+        {
+          name: 'authorName',
+          title: 'Author name',
+          type: 'string',
+        },
+        {
+          name: 'authorProfile',
+          title: 'Author profile',
+          type: 'string',
+        },
+        {
+          name: 'altTextImage',
+          title: 'Img alternative text',
+          type: 'string',
+        },
+      ],
     },
     {
       name: 'categories',
@@ -51,15 +65,18 @@ export default {
       of: [{ type: 'reference', to: { type: 'category' } }],
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
-    {
       title: 'Body',
       name: 'body',
       type: 'array',
       of: [{ type: 'block' }, { name: 'codeBlock', type: 'code' }],
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'date',
+      options: {
+        dateFormat: 'MMM-D-YYYY',
+      },
     },
   ],
 
