@@ -8,18 +8,20 @@ export interface Author {
   bio: string;
 }
 
+interface PostImage {
+  imageUrl: string;
+  authorName: string;
+  authorProfile: string;
+  altTextImage: string;
+}
+
 export interface Post {
-  _createdAt: string;
+  publishedAt: string;
   _id: string;
   title: string;
   author: Author;
   description: string;
-  mainImage: {
-    asset: {
-      _ref: string;
-    };
-  };
-  imgAlt: string;
+  postImage: PostImage;
   slug: {
     current: string;
   };
