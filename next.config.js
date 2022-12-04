@@ -7,13 +7,7 @@ const nextConfig = {
     defaultLocale: 'en',
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        pathname: '/images/ci2u4db7/production/**',
-      },
-    ],
+    domains: ['images.unsplash.com'],
   },
 };
 
