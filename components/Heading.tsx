@@ -31,7 +31,7 @@ export const Heading = ({
   }
 
   const afterLine = after
-    ? 'after:content-[""] after:block after:relative after:border-b after:w-[50%] after:top-[-0.6em] after:right-0 after:ml-[50%] after:mr-[5%] after:border-secondary-400'
+    ? 'md:after:content-[""] md:after:block md:after:relative md:after:border-b md:after:w-[50%] md:after:top-[-0.6em] md:after:right-0 md:after:ml-[50%] md:after:mr-[5%] md:after:border-secondary-400'
     : '';
 
   return (
