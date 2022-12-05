@@ -18,7 +18,7 @@ export const Container = ({
   const postStyle = variant === 'post' ? 'lg:grid-cols-2 2xl:gap-14' : '';
 
   return (
-    <div id={id} className="grid gap-12 lg:gap-16 px-4">
+    <div id={id} className="grid gap-12 lg:gap-16">
       <Heading as="h2" after className="mt-8">
         {title}
       </Heading>
