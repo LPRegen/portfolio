@@ -1,40 +1,60 @@
-// import { sanityClient } from "../../sanity";
-// import { Post } from "../../types/post-types";
-import Navbar from "../../components/Navbar";
-import data from "./data.json";
+import { Bold } from '../../components/Bold';
+import { CardPost } from '../../components/CardPost';
+import { Container } from '../../components/Container';
+import { Heading } from '../../components/Heading';
+import { Layout } from '../../components/Layout';
+import { Paragraph } from '../../components/Paragraph';
+import { sanityClient } from '../../sanity';
+import { Post } from '../../types/schema-types';
 
-const posts = data;
+interface PostProps {
+  posts: Array<Post>;
+}
 
-// interface PropsBlog {
-//   posts: Array<Post>;
-// }
-
-export default function Blog() {
-  const mainWrapper =
-    "flex flex-col gap-44 mx-8 pt-24 sm:mx-16 sm:gap-56 md:mx-28 md:gap-64 lg:mx-36 lg:gap-80 xl:mx-56 2xl:mx-64";
+export default function Blog({ posts }: PostProps) {
+  const [hero, ...morePosts] = posts;
 
   return (
-    <>
-      <Navbar />
-      <div className={mainWrapper}>
-        <ul>
-          {posts.map((post) => (
-            <li key={post._id} className={`bg-red-900`}>
-              {post.title}
-            </li>
-          ))}
-        </ul>
+    <Layout variant="blog">
+      <div className="flex flex-col pl-2 mt-6 gap-4 align-center justify-center md:mt-20 lg:mt-32">
+        <Heading as="h1">{`Hi there! I'm Manuel`}</Heading>
+        <Paragraph>
+          Here you will find articles related to{' '}
+          <Bold>my journey as a self-taught web developer</Bold>. What I have
+          been learning, my struggles and some articles about FOSS and tools
+          that I use on a daily basis.
+        </Paragraph>
       </div>
-    </>
+      <CardPost
+        variant="hero"
+        description={hero.description}
+        slug={hero.slug}
+        title={hero.title}
+        postImage={hero.postImage}
+      />
+
+      <Container variant="post" title="More articles" id="more-articles">
+        {morePosts.map((post) => (
+          <CardPost
+            key={post._id}
+            variant="regular"
+            description={post.description}
+            slug={post.slug}
+            title={post.title}
+            postImage={post.postImage}
+          />
+        ))}
+      </Container>
+    </Layout>
   );
 }
 
-// export const getServerSideProps = async () => {
-//   const query = `*[_type == "post"]{_id, _type, title, slug, author, image, categories, body} `;
-//   const posts = await sanityClient.fetch(query);
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// };
+export const getServerSideProps = async () => {
+  const query = `*[_type == "post"] | order(_createdAt desc) {_id, title, slug, postImage, description}`;
+  const posts = await sanityClient.fetch(query);
+  return {
+    props: {
+      posts,
+    },
+  };
+};
