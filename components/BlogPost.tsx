@@ -68,10 +68,10 @@ const serializers = {
   ),
 
   ul: ({ children }: SerializerProps) => (
-    <ul className="ml-6 list-disc text-slate-800">{children}</ul>
+    <ul className="ml-6 list-disc text-slate-800 [&>*]:pt-2">{children}</ul>
   ),
 
   ol: ({ children }: SerializerProps) => (
-    <ol className="ml-6 list-decimal text-slate-800">{children}</ol>
+    <ol className="ml-6 list-decimal text-slate-800 [&>*]:pt-2">{children}</ol>
   ),
 };
