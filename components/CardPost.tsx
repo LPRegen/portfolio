@@ -67,7 +67,7 @@ export const CardPost = ({
             priority
           />
         </CustomLink>
-        <span className="pl-4 text-sm text-opacity-5">
+        <span className="pl-4 text-sm font-light">
           Photo of{' '}
           <CustomLink
             href={authorProfile}
