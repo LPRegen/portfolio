@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import urlForImage from '../studio/lib/utils';
 import { Post } from '../types/schema-types';
 import { CustomLink } from './CustomLink';
 import { Heading } from './Heading';
 
 interface CardPostProps
-  extends Omit<Post, 'body' | '_createdAt' | '_id' | 'author'> {
+  extends Omit<Post, 'body' | '_id' | 'author' | 'publishedAt'> {
   variant: 'hero' | 'regular';
 }
 
@@ -13,22 +12,22 @@ export const CardPost = ({
   title,
   description,
   slug,
-  mainImage,
-  imgAlt,
   variant,
+  postImage,
 }: CardPostProps) => {
+  const { altTextImage, imageUrl, authorName, authorProfile } = postImage;
   const styles = {
     container: {
-      hero: 'lg:gap-8',
-      regular: 'lg:gap-6 self-start',
+      hero: 'gap-6 lg:gap-12',
+      regular: 'gap-4 lg:gap-6 self-start',
     },
     containerImg: {
-      hero: 'h-56 sm:h-64 md:h-72 lg:h-[450px]',
-      regular: 'h-40 sm:h-48 md:h-56 lg:h-80',
+      hero: 'relative h-56 sm:h-64 md:h-72 lg:h-[450px]',
+      regular: 'relative h-40 sm:h-48 md:h-56 lg:h-80',
     },
     textContainer: {
-      hero: 'lg:gap-6',
-      regular: 'lg:gap-4',
+      hero: 'pb-6 gap-6 lg:gap-8',
+      regular: 'gap-4',
     },
     imgSizes: {
       hero: `
@@ -50,29 +49,43 @@ export const CardPost = ({
   };
 
   return (
-    <div className={`grid gap-4 ${styles.container[variant]}`}>
-      <CustomLink
-        href={`/blog/${slug.current}`}
-        title={`Read ${title}`}
-        className={`relative ${styles.containerImg[variant]}`}
-      >
-        <Image
-          alt={imgAlt}
-          src={urlForImage(mainImage.asset._ref).url()}
-          fill
-          className={`object-cover rounded-xl shadow-xl`}
-          sizes={styles.imgSizes[variant]}
-          priority
-        />
-      </CustomLink>
-      <div className={`grid gap-2 ${styles.textContainer[variant]}`}>
+    <div
+      className={`grid shadow-xl rounded-xl transition md:hover:shadow-2xl ${styles.container[variant]}`}
+    >
+      <div className={`grid gap-2`}>
         <CustomLink
           href={`/blog/${slug.current}`}
-          className="max-w-fit underline"
+          title={`Read ${title}`}
+          className={styles.containerImg[variant]}
+        >
+          <Image
+            alt={altTextImage}
+            src={imageUrl}
+            fill
+            className={`object-cover rounded-t-xl`}
+            sizes={styles.imgSizes[variant]}
+            priority
+          />
+        </CustomLink>
+        <span className="pl-4 text-sm text-opacity-5">
+          Photo of{' '}
+          <CustomLink
+            href={authorProfile}
+            className="text-blue-600 hover:underline"
+          >
+            {authorName}
+          </CustomLink>
+        </span>
+      </div>
+
+      <div className={`grid p-4 pt-0 ${styles.textContainer[variant]}`}>
+        <CustomLink
+          href={`/blog/${slug.current}`}
+          className="max-w-fit hover:underline"
         >
           <Heading as={variant === 'hero' ? 'h2' : 'h3'}>{title}</Heading>
         </CustomLink>
-        <p className="font-normal">{description}</p>
+        <p className="line-clamp-3">{description}</p>
       </div>
     </div>
   );
