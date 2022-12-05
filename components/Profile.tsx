@@ -1,29 +1,27 @@
 import Image from 'next/image';
-import urlForImage from '../studio/lib/utils';
-import type { Author } from '../types/schema-types';
+import manuel_escribano from '../public/manuel-escribano.webp';
+import { Post } from '../types/schema-types';
 
-interface ProfileProps extends Omit<Author, 'bio'> {
-  lastUpdate: string;
-}
+type ProfileProps = Pick<Post, 'publishedAt'>;
 
-export const Profile = ({ name, image, lastUpdate }: ProfileProps) => {
+export const Profile = ({ publishedAt }: ProfileProps) => {
   return (
     <div className="flex items-center justify-start">
       <Image
         alt={''}
-        aria-hidden="true"
-        src={urlForImage(image.asset._ref).url()}
+        aria-hidden
+        src={manuel_escribano}
         className={`rounded-full`}
         width={40}
         height={40}
       />
       <div className="grid ml-3">
-        <p className="text-orange-700">{name}</p>
+        <p className="text-orange-700">Manuel Escribano</p>
         <p className="font-light text-xs">
-          {/* TODO Refactor date */}
           Last update:{' '}
-          {new Date(lastUpdate).toLocaleDateString('en-US', {
-            month: 'long',
+          {new Date(publishedAt).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
             year: 'numeric',
           })}
         </p>
