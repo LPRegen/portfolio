@@ -28,7 +28,7 @@ export const BlogPost = ({ body }: Pick<Post, 'body'>) => {
 
 const serializers = {
   h1: ({ children }: SerializerProps) => (
-    <Heading as="h1" className="mb-16 mt-20b text-center">
+    <Heading as="h1" className="mb-16 mt-20 text-center">
       {children}
     </Heading>
   ),
