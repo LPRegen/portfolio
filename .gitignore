@@ -34,3 +34,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sanity
+/studio/node_modules
+
+studio/.yarn/*
+# !studio/.yarn/cache
+!studio/.yarn/patches
+!studio/.yarn/plugins
+!studio/.yarn/releases
+!studio/.yarn/sdks
+!studio/.yarn/versions

@@ -5,7 +5,7 @@ interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   after?: boolean;
 }
 
-export const Title = ({
+export const Heading = ({
   children,
   as,
   className = '',
@@ -17,21 +17,21 @@ export const Title = ({
   let styles: string;
   switch (as) {
     case 'h1':
-      styles = 'font-extrabold text-2xl text-black';
+      styles = 'font-extrabold text-4xl';
       break;
     case 'h2':
-      styles = 'font-bold text-xl text-black font-lato ';
+      styles = 'font-bold text-3xl ';
       break;
     case 'h3':
-      styles = 'font-semibold text-lg text-black font-lato ';
+      styles = 'font-semibold text-2xl ';
       break;
     case 'h4':
-      styles = 'font-bold text-base text-black font-lato ';
+      styles = 'font-bold text-xl ';
       break;
   }
 
   const afterLine = after
-    ? 'after:content-[""] after:block after:relative after:border-b after:w-[60%] after:top-[-0.8em] after:right-0 after:ml-[40%] after:mr-[5%] after:border-secondary-400'
+    ? 'md:after:content-[""] md:after:block md:after:relative md:after:border-b md:after:w-[50%] md:after:top-[-0.6em] md:after:right-0 md:after:ml-[50%] md:after:mr-[5%] md:after:border-secondary-400'
     : '';
 
   return (

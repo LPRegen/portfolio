@@ -1,8 +1,8 @@
-import { Title } from './Heading';
+import { Container } from './Container';
+import { Heading } from './Heading';
 import { Paragraph } from './Paragraph';
+import { Bold } from './Bold';
 import { Technology } from './Technologies';
-import { SectionWrapper } from './Wrapper';
-import { Bold } from './Span';
 
 interface Techs {
   iconName: string;
@@ -31,7 +31,7 @@ const techList: TechList = [
 
 export const AboutMe = (): JSX.Element => {
   return (
-    <SectionWrapper id="about-me" title="About me">
+    <Container variant="section" id="about-me" title="About me">
       <div className="grid gap-2">
         <Paragraph>
           In my work experience I have always enjoyed to provide solutions
@@ -61,13 +61,13 @@ export const AboutMe = (): JSX.Element => {
       </div>
 
       <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
-        <Title as="h3">Technologies</Title>
+        <Heading as="h3">Technologies</Heading>
         <div className="text-center grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">
           {techList.map(({ iconName, title }) => (
             <Technology icon={iconName} title={title} key={iconName} />
           ))}
         </div>
       </div>
-    </SectionWrapper>
+    </Container>
   );
 };

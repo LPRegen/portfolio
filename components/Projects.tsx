@@ -1,9 +1,9 @@
-import Image, { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from 'next/legacy/image';
+import { Container } from './Container';
 import { CustomLink } from './CustomLink';
-import { Title } from './Heading';
-import { Paragraph } from './Paragraph';
+import { Heading } from './Heading';
 import { Icon } from './Icons';
-import { SectionWrapper } from './Wrapper';
+import { Paragraph } from './Paragraph';
 
 import olaApp from '../public/ola-home.jpg';
 import resumeBuilder from '../public/resume-builder.jpg';
@@ -81,7 +81,7 @@ export const Projects = (): JSX.Element => {
     'grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato';
 
   return (
-    <SectionWrapper id="projects" title="Projects">
+    <Container variant="section" id="projects" title="Projects">
       {projectList.map(
         ({ name, image, altImg, description, technologies, repo, live }) => {
           return (
@@ -96,9 +96,9 @@ export const Projects = (): JSX.Element => {
                 />
               </div>
               <div className="flex flex-col justify-between gap-4 items-center px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
-                <Title as="h3" className="w-full text-xl">
+                <Heading as="h3" className="w-full text-xl">
                   {name}
-                </Title>
+                </Heading>
                 <Paragraph className="text-secondary-800">
                   {description}
                 </Paragraph>
@@ -109,6 +109,6 @@ export const Projects = (): JSX.Element => {
           );
         }
       )}
-    </SectionWrapper>
+    </Container>
   );
 };

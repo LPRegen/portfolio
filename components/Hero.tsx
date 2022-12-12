@@ -1,5 +1,5 @@
 import { CustomLink } from './CustomLink';
-import { Title } from './Heading';
+import { Heading } from './Heading';
 import { Paragraph } from './Paragraph';
 
 export const Hero = () => {
@@ -11,12 +11,12 @@ export const Hero = () => {
   return (
     <div className={heroStyles}>
       <Paragraph className={`${textStyles}`}>Hi, my name is</Paragraph>
-      <Title as="h1" className="text-hero font-montserrat">
+      <Heading as="h1" className="text-hero font-montserrat">
         Manuel Escribano
-      </Title>
+      </Heading>
       <Paragraph className={`${textStyles} max-w-[740px]`}>
-        Self taught frontend developer looking to make a positive impact in the
-        life of people through technology.
+        Self taught frontend developer making a positive impact in the life of
+        people through technology.
       </Paragraph>
       <CustomLink
         href="#contact"
