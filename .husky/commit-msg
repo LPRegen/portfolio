@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo " --- "
+echo " "
+echo "Checking commit message."
+echo " "
+
+message="$(cat $1)"
+requiredPattern="^(feat:|fix:|chore:|docs:|style:|test:|refactor:|perf:|ci:|build:|revert:) .*$"
+if ! [[ $message =~ $requiredPattern ]]; then
+  echo "Wrong commit message."
+  echo " "
+  echo "Your commit message was:"
+  echo "-> " $message
+  echo " "
+  echo " --- "
+  exit 1
+fi
+
+echo "Everything seems ok!"
+echo " "
+echo " --- "
