@@ -1,7 +1,4 @@
-import { Menu } from "@headlessui/react";
-import { useEffect, useState } from "react";
 import { CustomLink } from "./CustomLink";
-import { Icon } from "./Icons";
 
 interface Item {
   name: string;
@@ -18,26 +15,7 @@ const navItem =
 
 const wrapperStyle = "absolute w-full z-50 border-b shadow-lg";
 
-const MenuItem = ({ item }: { item: Item }) => {
-  return (
-    <Menu.Item>
-      {({ active }) => (
-        <div>
-          <CustomLink
-            href={item.href}
-            active={active}
-            className={navItem}
-            title={item.name}
-          >
-            {item.name}
-          </CustomLink>
-        </div>
-      )}
-    </Menu.Item>
-  );
-};
-
-const DivNav = () => {
+const Navbar = () => {
   const mdStyles = "md:gap-8 md:flex md:items-center md:px-28";
   return (
     <div
@@ -55,45 +33,6 @@ const DivNav = () => {
       ))}
     </div>
   );
-};
-
-const MenuNav = () => (
-  <Menu
-    as="div"
-    className={`${wrapperStyle} md:hidden lg:hidden xl:hidden 2xl:hidden`}
-  >
-    <Menu.Button
-      className="px-3 py-2 my-1 focus:bg-gray-100 rounded-md"
-      aria-label="Menu Items"
-    >
-      <Icon iconName="menu" size="large" />
-    </Menu.Button>
-    <Menu.Items
-      aria-label="Menu items"
-      className="absolute z-10 w-full px-2 pb-3 bg-white shadow-lg"
-    >
-      {itemList.map((item) => (
-        <MenuItem item={item} key={item.name} />
-      ))}
-    </Menu.Items>
-  </Menu>
-);
-
-const Navbar = () => {
-  const [windowDimensions, setWindowDimensions] = useState<boolean | null>(
-    null
-  );
-
-  const checkWindowDimensions = () =>
-    setWindowDimensions(window.matchMedia("(max-width: 768px)").matches);
-
-  useEffect(() => {
-    checkWindowDimensions();
-    window.addEventListener("resize", checkWindowDimensions);
-    return () => window.removeEventListener("resize", checkWindowDimensions);
-  }, []);
-
-  return <nav>{windowDimensions ? <MenuNav /> : <DivNav />}</nav>;
 };
 
 export default Navbar;
