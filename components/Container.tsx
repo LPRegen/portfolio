@@ -1,7 +1,7 @@
-import { Heading } from './Heading';
+import { Heading } from "./Heading";
 
 interface ContainerProps {
-  variant: 'section' | 'post';
+  variant: "section" | "post";
   title: string;
   children: React.ReactNode;
   className?: string;
@@ -12,10 +12,10 @@ export const Container = ({
   variant,
   title,
   children,
-  className = '',
+  className = "",
   id,
 }: ContainerProps) => {
-  const postStyle = variant === 'post' ? 'lg:grid-cols-2 2xl:gap-14' : '';
+  const postStyle = variant === "post" ? "lg:grid-cols-2 2xl:gap-14" : "";
 
   return (
     <div id={id} className="grid gap-12 lg:gap-16">

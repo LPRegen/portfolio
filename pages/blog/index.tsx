@@ -1,11 +1,11 @@
-import { Bold } from '../../components/Bold';
-import { CardPost } from '../../components/CardPost';
-import { Container } from '../../components/Container';
-import { Heading } from '../../components/Heading';
-import { Layout } from '../../components/Layout';
-import { Paragraph } from '../../components/Paragraph';
-import { sanityClient } from '../../sanity';
-import { Post } from '../../types/schema-types';
+import { Bold } from "../../components/Bold";
+import { CardPost } from "../../components/CardPost";
+import { Container } from "../../components/Container";
+import { Heading } from "../../components/Heading";
+import { Layout } from "../../components/Layout";
+import { Paragraph } from "../../components/Paragraph";
+import { sanityClient } from "../../sanity";
+import { Post } from "../../types/schema-types";
 
 interface PostProps {
   posts: Array<Post>;
@@ -19,7 +19,7 @@ export default function Blog({ posts }: PostProps) {
       <div className="flex flex-col pl-2 mt-6 gap-4 align-center justify-center md:mt-20 lg:mt-32">
         <Heading as="h1">{`Hi there! I'm Manuel`}</Heading>
         <Paragraph>
-          Here you will find articles related to{' '}
+          Here you will find articles related to{" "}
           <Bold>my journey as a self-taught web developer</Bold>. What I have
           been learning, my struggles and some articles about FOSS and tools
           that I use on a daily basis.

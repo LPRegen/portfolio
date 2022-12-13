@@ -1,11 +1,11 @@
-import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import { BlogPost } from '../../components/BlogPost';
-import { CustomLink } from '../../components/CustomLink';
-import { Layout } from '../../components/Layout';
-import { Profile } from '../../components/Profile';
-import { sanityClient } from '../../sanity';
-import { Post } from '../../types/schema-types';
+import { GetStaticProps } from "next";
+import Image from "next/image";
+import { BlogPost } from "../../components/BlogPost";
+import { CustomLink } from "../../components/CustomLink";
+import { Layout } from "../../components/Layout";
+import { Profile } from "../../components/Profile";
+import { sanityClient } from "../../sanity";
+import { Post } from "../../types/schema-types";
 
 interface PostsProps {
   post: Post;
@@ -40,7 +40,7 @@ function Posts({ post }: PostsProps) {
             />
           </div>
           <span className="pl-4 text-sm font-light">
-            Photo of{' '}
+            Photo of{" "}
             <CustomLink
               href={authorProfile}
               className="text-blue-600 hover:underline"
@@ -72,7 +72,7 @@ export const getStaticPaths = async () => {
   }));
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
 

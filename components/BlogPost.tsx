@@ -1,9 +1,9 @@
-import PortableText from 'react-portable-text';
-import type { Post } from '../types/schema-types';
-import { Code } from './Code';
-import { CustomLink } from './CustomLink';
-import { Heading } from './Heading';
-import { Paragraph } from './Paragraph';
+import PortableText from "react-portable-text";
+import type { Post } from "../types/schema-types";
+import { CustomLink } from "./CustomLink";
+import { Heading } from "./Heading";
+import { Paragraph } from "./Paragraph";
+import { Code } from "./Code";
 
 interface SerializerProps {
   children: string;
@@ -12,7 +12,7 @@ interface SerializerProps {
   language: string;
 }
 
-export const BlogPost = ({ body }: Pick<Post, 'body'>) => {
+export const BlogPost = ({ body }: Pick<Post, "body">) => {
   return (
     <>
       <PortableText

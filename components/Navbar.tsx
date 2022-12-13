@@ -1,7 +1,7 @@
-import { Menu } from '@headlessui/react';
-import { useEffect, useState } from 'react';
-import { CustomLink } from './CustomLink';
-import { Icon } from './Icons';
+import { Menu } from "@headlessui/react";
+import { useEffect, useState } from "react";
+import { CustomLink } from "./CustomLink";
+import { Icon } from "./Icons";
 
 interface Item {
   name: string;
@@ -9,14 +9,14 @@ interface Item {
 }
 
 const itemList: Array<Item> = [
-  { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
 ];
 
 const navItem =
-  'block px-3 py-2 my-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-200/80 focus:bg-gray-200/80';
+  "block px-3 py-2 my-1 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-200/80 focus:bg-gray-200/80";
 
-const wrapperStyle = 'absolute w-full z-50 border-b shadow-lg';
+const wrapperStyle = "absolute w-full z-50 border-b shadow-lg";
 
 const MenuItem = ({ item }: { item: Item }) => {
   return (
@@ -38,7 +38,7 @@ const MenuItem = ({ item }: { item: Item }) => {
 };
 
 const DivNav = () => {
-  const mdStyles = 'md:gap-8 md:flex md:items-center md:px-28';
+  const mdStyles = "md:gap-8 md:flex md:items-center md:px-28";
   return (
     <div
       className={`hidden h-14 ${wrapperStyle} ${mdStyles} lg:px-36 xl:px-56 2xl:px-64`}
@@ -85,12 +85,12 @@ const Navbar = () => {
   );
 
   const checkWindowDimensions = () =>
-    setWindowDimensions(window.matchMedia('(max-width: 768px)').matches);
+    setWindowDimensions(window.matchMedia("(max-width: 768px)").matches);
 
   useEffect(() => {
     checkWindowDimensions();
-    window.addEventListener('resize', checkWindowDimensions);
-    return () => window.removeEventListener('resize', checkWindowDimensions);
+    window.addEventListener("resize", checkWindowDimensions);
+    return () => window.removeEventListener("resize", checkWindowDimensions);
   }, []);
 
   return <nav>{windowDimensions ? <MenuNav /> : <DivNav />}</nav>;

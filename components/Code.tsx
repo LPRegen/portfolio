@@ -1,8 +1,8 @@
-import Prism from 'prismjs';
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/themes/prism-tomorrow.min.css';
-import { useEffect } from 'react';
+import Prism from "prismjs";
+import "prismjs/plugins/line-numbers/prism-line-numbers";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "prismjs/themes/prism-tomorrow.min.css";
+import { useEffect } from "react";
 
 interface CodeProps {
   language?: string;
@@ -10,7 +10,7 @@ interface CodeProps {
 }
 
 export const Code = ({ language, code }: CodeProps) => {
-  if (language === 'tsx') {
+  if (language === "tsx") {
     require(`prismjs/components/prism-jsx`);
     require(`prismjs/components/prism-tsx`);
   } else {

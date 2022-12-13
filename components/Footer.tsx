@@ -1,5 +1,5 @@
-import { CustomLink } from './CustomLink';
-import { Paragraph } from './Paragraph';
+import { CustomLink } from "./CustomLink";
+import { Paragraph } from "./Paragraph";
 
 interface Items {
   name: string;
@@ -8,7 +8,7 @@ interface Items {
 
 const Sections = ({ item }: { item: Items }) => {
   const footerItem =
-    'text-gray-600 px-3 py-2 text-base hover:underline transition duration-150 ease-in-out rounded-md hover:text-gray-800 hover:bg-gray-200/80 focus:bg-gray-200/80';
+    "text-gray-600 px-3 py-2 text-base hover:underline transition duration-150 ease-in-out rounded-md hover:text-gray-800 hover:bg-gray-200/80 focus:bg-gray-200/80";
   return (
     <li>
       <CustomLink
@@ -24,8 +24,8 @@ const Sections = ({ item }: { item: Items }) => {
 
 export const Footer = () => {
   const sections: Array<Items> = [
-    { name: 'Home', href: '/' },
-    { name: 'Blog', href: '/blog' },
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "/blog" },
   ];
   return (
     <footer className="grid gap-8 border-t mt-20">

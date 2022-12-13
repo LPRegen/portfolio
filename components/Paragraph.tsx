@@ -5,7 +5,7 @@ interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
 
 export const Paragraph = ({
   children,
-  className = '',
+  className = "",
   ...props
 }: ParagraphProps) => (
   <p {...props} className={`text-lg ${className}`}>

@@ -1,24 +1,24 @@
-import { useForm, ValidationError } from '@formspree/react';
-import { Button } from './Button';
-import { Container } from './Container';
-import { CustomLink } from './CustomLink';
-import { Icon } from './Icons';
-import { Paragraph } from './Paragraph';
+import { useForm, ValidationError } from "@formspree/react";
+import { Button } from "./Button";
+import { Container } from "./Container";
+import { CustomLink } from "./CustomLink";
+import { Icon } from "./Icons";
+import { Paragraph } from "./Paragraph";
 
 export function ContactForm(): JSX.Element {
-  const [state, handleSubmit] = useForm('mnqwwopk');
-  const containerStyle = 'grid gap-2';
+  const [state, handleSubmit] = useForm("mnqwwopk");
+  const containerStyle = "grid gap-2";
 
   const ContactButton = (): JSX.Element => {
-    let formState = 'Submit';
+    let formState = "Submit";
     if (state.submitting) {
-      formState = 'Sending...';
+      formState = "Sending...";
     } else if (state.succeeded) {
-      formState = 'Sended!';
+      formState = "Sended!";
     }
 
     const sendingStyle = (): string =>
-      state.submitting ? 'bg-primary-400/60' : '';
+      state.submitting ? "bg-primary-400/60" : "";
     const buttonStyle: string = `${sendingStyle()} rounded-lg text-secondary-800 bg-primary-200/50 p-4 disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed`;
 
     return (
@@ -34,9 +34,9 @@ export function ContactForm(): JSX.Element {
   };
 
   const Form = (): JSX.Element => {
-    const labelStyle = 'text-sm text-secondary-900';
+    const labelStyle = "text-sm text-secondary-900";
     const inputStyle =
-      'px-1 py-2 text-base border border-primary-300/50 focus:outline-none focus:border-primary-500';
+      "px-1 py-2 text-base border border-primary-300/50 focus:outline-none focus:border-primary-500";
 
     return (
       <form

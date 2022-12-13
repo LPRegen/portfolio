@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 interface CustomLinkProps {
   href: string;
@@ -11,11 +11,11 @@ interface CustomLinkProps {
 export const CustomLink = ({
   href,
   children,
-  className = '',
+  className = "",
   title,
   active,
 }: CustomLinkProps): JSX.Element => {
-  const activeProp = active ? `${active && 'bg-secondary-300'}` : '';
+  const activeProp = active ? `${active && "bg-secondary-300"}` : "";
 
   return (
     <Link href={href} className={`${activeProp} ${className}`} title={title}>

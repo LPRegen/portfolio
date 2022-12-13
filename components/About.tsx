@@ -1,8 +1,8 @@
-import { Container } from './Container';
-import { Heading } from './Heading';
-import { Paragraph } from './Paragraph';
-import { Bold } from './Bold';
-import { Technology } from './Technologies';
+import { Container } from "./Container";
+import { Heading } from "./Heading";
+import { Paragraph } from "./Paragraph";
+import { Bold } from "./Bold";
+import { Technology } from "./Technologies";
 
 interface Techs {
   iconName: string;
@@ -12,21 +12,21 @@ interface Techs {
 type TechList = Array<Techs>;
 
 const techList: TechList = [
-  { iconName: 'javascript', title: 'Javascript' },
-  { iconName: 'typescript', title: 'TypeScript' },
-  { iconName: 'react', title: 'React' },
-  { iconName: 'next', title: 'Next JS' },
-  { iconName: 'html', title: 'HTML' },
-  { iconName: 'css', title: 'CSS' },
-  { iconName: 'styled', title: 'Styled Components' },
-  { iconName: 'sass', title: 'SASS' },
-  { iconName: 'tailwind', title: 'Tailwind CSS' },
-  { iconName: 'story', title: 'Storybook' },
-  { iconName: 'webpack', title: 'Webpack' },
-  { iconName: 'eslint', title: 'ESLint' },
-  { iconName: 'jest', title: 'Jest' },
-  { iconName: 'npm', title: 'NPM' },
-  { iconName: 'git', title: 'Git' },
+  { iconName: "javascript", title: "Javascript" },
+  { iconName: "typescript", title: "TypeScript" },
+  { iconName: "react", title: "React" },
+  { iconName: "next", title: "Next JS" },
+  { iconName: "html", title: "HTML" },
+  { iconName: "css", title: "CSS" },
+  { iconName: "styled", title: "Styled Components" },
+  { iconName: "sass", title: "SASS" },
+  { iconName: "tailwind", title: "Tailwind CSS" },
+  { iconName: "story", title: "Storybook" },
+  { iconName: "webpack", title: "Webpack" },
+  { iconName: "eslint", title: "ESLint" },
+  { iconName: "jest", title: "Jest" },
+  { iconName: "npm", title: "NPM" },
+  { iconName: "git", title: "Git" },
 ];
 
 export const AboutMe = (): JSX.Element => {
@@ -54,8 +54,8 @@ export const AboutMe = (): JSX.Element => {
           Test-driven Development (<Bold>TDD</Bold>) are familiar to me.
         </Paragraph>
         <Paragraph>
-          Some of the technologies I use are on a daily basis are{' '}
-          <Bold>React</Bold>, <Bold>JavaScript</Bold> and{' '}
+          Some of the technologies I use are on a daily basis are{" "}
+          <Bold>React</Bold>, <Bold>JavaScript</Bold> and{" "}
           <Bold>TypeScript</Bold>.
         </Paragraph>
       </div>

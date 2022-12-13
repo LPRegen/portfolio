@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import { Post } from '../types/schema-types';
-import { CustomLink } from './CustomLink';
-import { Heading } from './Heading';
+import Image from "next/image";
+import { Post } from "../types/schema-types";
+import { CustomLink } from "./CustomLink";
+import { Heading } from "./Heading";
 
 interface CardPostProps
-  extends Omit<Post, 'body' | '_id' | 'author' | 'publishedAt'> {
-  variant: 'hero' | 'regular';
+  extends Omit<Post, "body" | "_id" | "author" | "publishedAt"> {
+  variant: "hero" | "regular";
 }
 
 export const CardPost = ({
@@ -18,16 +18,16 @@ export const CardPost = ({
   const { altTextImage, imageUrl, authorName, authorProfile } = postImage;
   const styles = {
     container: {
-      hero: 'gap-6 lg:gap-12',
-      regular: 'gap-4 lg:gap-6 self-start',
+      hero: "gap-6 lg:gap-12",
+      regular: "gap-4 lg:gap-6 self-start",
     },
     containerImg: {
-      hero: 'relative h-56 sm:h-64 md:h-72 lg:h-[450px]',
-      regular: 'relative h-40 sm:h-48 md:h-56 lg:h-80',
+      hero: "relative h-56 sm:h-64 md:h-72 lg:h-[450px]",
+      regular: "relative h-40 sm:h-48 md:h-56 lg:h-80",
     },
     textContainer: {
-      hero: 'pb-6 gap-6 lg:gap-8',
-      regular: 'gap-4',
+      hero: "pb-6 gap-6 lg:gap-8",
+      regular: "gap-4",
     },
     imgSizes: {
       hero: `
@@ -68,7 +68,7 @@ export const CardPost = ({
           />
         </CustomLink>
         <span className="pl-4 text-sm font-light">
-          Photo of{' '}
+          Photo of{" "}
           <CustomLink
             href={authorProfile}
             className="text-blue-600 hover:underline"
@@ -83,7 +83,7 @@ export const CardPost = ({
           href={`/blog/${slug.current}`}
           className="max-w-fit hover:underline"
         >
-          <Heading as={variant === 'hero' ? 'h2' : 'h3'}>{title}</Heading>
+          <Heading as={variant === "hero" ? "h2" : "h3"}>{title}</Heading>
         </CustomLink>
         <p className="line-clamp-3">{description}</p>
       </div>
