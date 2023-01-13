@@ -6,14 +6,13 @@ import { Heading } from "../../components/Heading";
 import { Layout } from "../../components/Layout";
 // import { Paragraph } from "../../components/Paragraph";
 import { sanityClient } from "../../sanity";
-import { Post } from "../../types/schema-types";
+// import { Post } from "../../types/schema-types";
 
-interface PostProps {
-  posts: Array<Post>;
-}
+// interface PostProps {
+//   posts: Array<Post>;
+// }
 
-// eslint-disable-next-line
-export default function Blog({ posts }: PostProps) {
+export default function Blog() {
   // const [hero, ...morePosts] = posts;
 
   return (
