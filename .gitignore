@@ -45,3 +45,5 @@ studio/.yarn/*
 !studio/.yarn/releases
 !studio/.yarn/sdks
 !studio/.yarn/versions
+
+.vscode/
