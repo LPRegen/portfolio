@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "sanity": "cd studio && npx @sanity/cli start",
     "lint": "next lint",
     "prepare": "husky install"
   },
