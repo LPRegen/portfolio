@@ -1,22 +1,22 @@
 import { GiPoolTriangle } from "react-icons/gi";
-import { BsLinkedin, BsGithub, BsLink } from "react-icons/bs";
+import { BsGithub, BsLink, BsLinkedin } from "react-icons/bs";
 import { HiArrowSmUp, HiMenu } from "react-icons/hi";
 import {
-  SiJavascript,
-  SiHtml5,
   SiCsswizardry,
-  SiTailwindcss,
-  SiReact,
-  SiNpm,
+  SiEslint,
   SiGit,
+  SiHtml5,
+  SiJavascript,
   SiJest,
+  SiNextdotjs,
+  SiNpm,
+  SiReact,
+  SiSass,
+  SiStoryblok,
+  SiStyledcomponents,
+  SiTailwindcss,
   SiTypescript,
   SiWebpack,
-  SiNextdotjs,
-  SiStoryblok,
-  SiSass,
-  SiStyledcomponents,
-  SiEslint,
 } from "react-icons/si";
 
 const SupportedIcons = {
@@ -63,6 +63,7 @@ export const Icon = ({
   size = "medium",
   className = "",
 }: IconProps) => {
+  // eslint-disable-next-line
   // @ts-ignore
   const SelectedIcon = SupportedIcons[iconName];
 
