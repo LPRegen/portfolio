@@ -1,20 +1,20 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 const project = defineType({
-  title: "Project List",
+  title: "Projects",
   type: "document",
-  name: "projectList",
-  preview: { select: { title: "projTitle" } },
+  name: "projects",
+  preview: { select: { title: "title" } },
   fields: [
     defineField({
       title: "Project Title",
       type: "string",
-      name: "projTitle",
+      name: "title",
     }),
     defineField({
       title: "Description",
       type: "array",
-      name: "projDescription",
+      name: "description",
       of: [defineArrayMember({ type: "block" })],
     }),
     defineField({
@@ -29,14 +29,14 @@ const project = defineType({
     defineField({
       title: "URLs",
       name: "urlsGroup",
-      type: "object",
-      fields: [
-        defineField({
+      type: "array",
+      of: [
+        defineArrayMember({
           title: "Repository URL",
           name: "repoUrl",
           type: "url",
         }),
-        defineField({
+        defineArrayMember({
           title: "Live URL",
           name: "liveUrl",
           type: "url",
