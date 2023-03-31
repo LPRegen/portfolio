@@ -5,6 +5,7 @@ import { deskTool } from "sanity/desk";
 import schemas from "schemas";
 
 export default defineConfig({
+  basePath: "/studio",
   dataset,
   projectId,
   title,
