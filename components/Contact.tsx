@@ -1,3 +1,4 @@
+"use client";
 import { useForm, ValidationError } from "@formspree/react";
 import { Button } from "./Button";
 import { Container } from "./Container";
@@ -19,7 +20,8 @@ export function ContactForm(): JSX.Element {
 
     const sendingStyle = (): string =>
       state.submitting ? "bg-primary-400/60" : "";
-    const buttonStyle: string = `${sendingStyle()} rounded-lg text-secondary-800 bg-primary-200/50 p-4 disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed`;
+    const buttonStyle =
+      `${sendingStyle()} rounded-lg text-secondary-800 bg-primary-200/50 p-4 disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed`;
 
     return (
       <Button
