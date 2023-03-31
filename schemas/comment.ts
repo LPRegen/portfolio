@@ -1,40 +1,39 @@
-import { CommentIcon } from '@sanity/icons';
+import { defineField, defineType } from "sanity";
 
-export default {
-  name: 'comment',
-  type: 'document',
-  title: 'Comment',
-  icon: CommentIcon,
+const comment = defineType({
+  title: "Comment",
+  type: "document",
+  name: "comment",
   fields: [
-    {
-      name: 'name',
-      type: 'string',
-    },
-    {
-      title: 'Approved',
-      name: 'approved',
-      type: 'boolean',
+    defineField({
+      name: "name",
+      type: "string",
+    }),
+    defineField({
+      title: "Approved",
+      name: "approved",
+      type: "boolean",
       description: "Comments won't show on the site without approval",
-    },
-    {
-      name: 'email',
-      type: 'string',
-    },
-    {
-      name: 'comment',
-      type: 'text',
-    },
-    {
-      name: 'post',
-      type: 'reference',
-      to: [{ type: 'post' }],
-    },
+    }),
+    defineField({
+      name: "email",
+      type: "string",
+    }),
+    defineField({
+      name: "comment",
+      type: "text",
+    }),
+    defineField({
+      name: "post",
+      type: "reference",
+      to: [{ type: "post" }],
+    }),
   ],
   preview: {
     select: {
-      name: 'name',
-      comment: 'comment',
-      post: 'post.title',
+      name: "name",
+      comment: "comment",
+      post: "post.title",
     },
     prepare({ name, comment, post }) {
       return {
@@ -43,4 +42,6 @@ export default {
       };
     },
   },
-};
+});
+
+export default comment;
