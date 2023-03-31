@@ -38,7 +38,6 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "studio/lib/helpers.js"
+    "node_modules"
   ]
 }
