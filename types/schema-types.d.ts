@@ -1,11 +1,7 @@
-export interface Author {
-  name: string;
-  image: {
-    asset: {
-      _ref: string;
-    };
+interface Image {
+  asset: {
+    _ref: string;
   };
-  bio: string;
 }
 
 interface PostImage {
@@ -13,6 +9,23 @@ interface PostImage {
   authorName: string;
   authorProfile: string;
   altTextImage: string;
+}
+
+interface Content {
+  _type: string;
+  code?: string;
+  language?: string;
+  children: [
+    {
+      text: string;
+    },
+  ];
+}
+
+export interface Author {
+  name: string;
+  image: Image;
+  bio: string;
 }
 
 export interface Post {
@@ -25,16 +38,16 @@ export interface Post {
   slug: {
     current: string;
   };
-  body: [
-    {
-      _type: string;
-      code?: string;
-      language?: string;
-      children: [
-        {
-          text: string;
-        }
-      ];
-    }
-  ];
+  body: Array<Content>;
+}
+
+interface Project {
+  title: string;
+  description: Array<Content>;
+  imgGroup: {
+    altImage: string;
+    projImage: Image;
+  };
+  techList: Array<string>;
+  urlsGroup: Array<string>;
 }
