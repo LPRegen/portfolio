@@ -1,5 +1,5 @@
 import { defineConfig } from "sanity";
-import { dataset, projectId, title } from "./lib/sanity-variables";
+import { apiVersion, dataset, projectId, title } from "./lib/sanity-variables";
 import { visionTool } from "@sanity/vision";
 import { deskTool } from "sanity/desk";
 import schemas from "./schemas";
@@ -9,6 +9,7 @@ export default defineConfig({
   dataset,
   projectId,
   title,
+  apiVersion,
   plugins: [
     deskTool(),
     visionTool(),
@@ -16,4 +17,5 @@ export default defineConfig({
   schema: {
     types: schemas,
   },
+  useCdn: true,
 });
