@@ -34,13 +34,37 @@ const project = defineType({
         defineArrayMember({
           title: "Repository URL",
           name: "repoUrl",
-          type: "url",
+          type: "object",
+          fields: [
+            defineField({
+              title: "URL Title",
+              name: "urlTitle",
+              type: "string",
+            }),
+            defineField({
+              title: "url",
+              name: "urlValue",
+              type: "url",
+            }),
+          ],
         }),
-        defineArrayMember({
-          title: "Live URL",
-          name: "liveUrl",
-          type: "url",
-        }),
+        // defineArrayMember({
+        //   title: "Live URL",
+        //   name: "liveUrl",
+        //   type: "object",
+        //   fields: [
+        //     defineField({
+        //       title: "URL Title",
+        //       name: "urlName",
+        //       type: "string",
+        //     }),
+        //     defineField({
+        //       title: "url",
+        //       name: "live",
+        //       type: "url",
+        //     }),
+        //   ],
+        // }),
       ],
     }),
     defineField({

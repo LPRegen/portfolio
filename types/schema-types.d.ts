@@ -22,6 +22,11 @@ interface Content {
   ];
 }
 
+interface Urls {
+  urlTitle: string;
+  urlValue: string;
+}
+
 export interface Author {
   name: string;
   image: Image;
@@ -49,5 +54,5 @@ interface Project {
     projImage: Image;
   };
   techList: Array<string>;
-  urlsGroup: Array<string>;
+  urlsGroup: Array<Urls>;
 }
