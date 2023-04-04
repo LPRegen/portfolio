@@ -48,23 +48,6 @@ const project = defineType({
             }),
           ],
         }),
-        // defineArrayMember({
-        //   title: "Live URL",
-        //   name: "liveUrl",
-        //   type: "object",
-        //   fields: [
-        //     defineField({
-        //       title: "URL Title",
-        //       name: "urlName",
-        //       type: "string",
-        //     }),
-        //     defineField({
-        //       title: "url",
-        //       name: "live",
-        //       type: "url",
-        //     }),
-        //   ],
-        // }),
       ],
     }),
     defineField({
