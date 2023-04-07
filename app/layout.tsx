@@ -1,4 +1,6 @@
+import { Footer } from "components/Footer";
 import { HeadComp } from "components/HeadComp";
+import Navbar from "components/Navbar";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +9,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <HeadComp />
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
