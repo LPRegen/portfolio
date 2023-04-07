@@ -18,7 +18,7 @@ const wrapperStyle = "absolute w-full z-50 border-b shadow-lg";
 const Navbar = () => {
   const mdStyles = "md:gap-8 md:flex md:items-center md:px-28";
   return (
-    <div
+    <nav
       className={`hidden h-14 ${wrapperStyle} ${mdStyles} lg:px-36 xl:px-56 2xl:px-64`}
     >
       {itemList.map((item) => (
@@ -31,7 +31,7 @@ const Navbar = () => {
           {item.name}
         </CustomLink>
       ))}
-    </div>
+    </nav>
   );
 };
 
