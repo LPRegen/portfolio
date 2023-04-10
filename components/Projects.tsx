@@ -8,10 +8,10 @@ import { Icon } from "./Icons";
 
 import urlFor from "../lib/urlFor";
 import { getProjects } from "lib/getProjects";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Serializer } from "./Serializer";
 
-const Links = (urls: Pick<Project, "urlsGroup">): JSX.Element => (
+const Links = (urls: Pick<Project, "urlsGroup">) => (
   <div className="grid grid-cols-2 gap-12 mt-4">
     {urls.urlsGroup.map((group) => {
       return (
@@ -42,13 +42,14 @@ const TechList = (
   </div>
 );
 
-export const Projects = (): JSX.Element => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  useEffect(() => {
-    getProjects().then((data) => {
-      setProjects(data);
-    });
-  }, []);
+export const Projects = async () => {
+  // const [projects, setProjects] = useState<Project[]>([]);
+  // useEffect(() => {
+  //   getProjects().then((data) => {
+  //     setProjects(data);
+  //   });
+  // }, []);
+  const projects = await getProjects();
 
   const containerStyles =
     "grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato";
