@@ -1,8 +1,10 @@
-import blockContent from "./blockContent";
+import category from "./category";
+import post from "./post";
 import project from "./projects";
 
 const schemas = [
-  blockContent,
+  category,
+  post,
   project,
 ];
 
