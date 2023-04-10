@@ -1,20 +1,21 @@
-import { TagIcon } from '@sanity/icons';
+import { defineField } from "sanity";
 
-export default {
-  name: 'category',
-  title: 'Category',
-  icon: TagIcon,
-  type: 'document',
+const category = defineField({
+  name: "category",
+  title: "Category",
+  type: "document",
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    },
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+    }),
   ],
-};
+});
+
+export default category;
