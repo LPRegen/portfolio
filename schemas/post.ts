@@ -62,8 +62,13 @@ const post = defineType({
       name: "body",
       type: "array",
       of: [
-        defineArrayMember({ type: "block" }),
-        defineField({ name: "codeBlock", type: "code" }),
+        defineArrayMember({
+          type: "block",
+        }),
+        defineArrayMember({
+          type: "code",
+          name: "code",
+        }),
       ],
     }),
     defineField({
@@ -75,18 +80,11 @@ const post = defineType({
       },
     }),
   ],
-
   preview: {
     select: {
       title: "title",
       author: "author.name",
       media: "mainImage",
-    },
-    prepare(selection) {
-      const { author } = selection;
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      });
     },
   },
 });
