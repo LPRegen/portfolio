@@ -32,12 +32,12 @@ const Links = (urls: Pick<Project, "urlsGroup">) => (
   </div>
 );
 
-const TechList = (
-  techList: Pick<Project, "techList">,
-): JSX.Element => (
+const TechList = (techList: Pick<Project, "techList">): JSX.Element => (
   <div className="flex gap-1">
     {techList.techList.map((tech) => (
-      <i className="text-secondary-600" key={tech}>{tech}</i>
+      <i className="text-secondary-600" key={tech}>
+        {tech}
+      </i>
     ))}
   </div>
 );
@@ -56,28 +56,26 @@ export const Projects = async () => {
 
   return (
     <Container variant="section" id="projects" title="Projects">
-      {projects.map(
-        ({ title, imgGroup, urlsGroup, techList, description }) => (
-          <div key={title} className={containerStyles}>
-            <div className="relative -z-10">
-              <Image
-                src={urlFor(imgGroup.projImage).url()}
-                alt={imgGroup.altImage}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <div className="flex flex-col justify-between gap-4 items-start px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
-              <Heading as="h3" className="w-full text-xl">
-                {title}
-              </Heading>
-              <Serializer description={description} />
-              <TechList techList={techList} />
-              <Links urlsGroup={urlsGroup} />
-            </div>
+      {projects.map(({ title, imgGroup, urlsGroup, techList, description }) => (
+        <div key={title} className={containerStyles}>
+          <div className="relative -z-10">
+            <Image
+              src={urlFor(imgGroup.projImage).url()}
+              alt={imgGroup.altImage}
+              layout="fill"
+              objectFit="contain"
+            />
           </div>
-        ),
-      )}
+          <div className="flex flex-col justify-between gap-4 items-start px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
+            <Heading as="h3" className="w-full text-xl">
+              {title}
+            </Heading>
+            <Serializer description={description} />
+            <TechList techList={techList} />
+            <Links urlsGroup={urlsGroup} />
+          </div>
+        </div>
+      ))}
     </Container>
   );
 };
