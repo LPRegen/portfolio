@@ -6,9 +6,8 @@ import { CustomLink } from "./CustomLink";
 import { Heading } from "./Heading";
 import { Icon } from "./Icons";
 
-import urlFor from "../lib/urlFor";
-import { getProjects } from "lib/getProjects";
-// import { useEffect, useState } from "react";
+import { urlFor } from "lib/client";
+import { getProjects } from "lib/queries";
 import { Serializer } from "./Serializer";
 
 const Links = (urls: Pick<Project, "urlsGroup">) => (
@@ -43,12 +42,6 @@ const TechList = (techList: Pick<Project, "techList">): JSX.Element => (
 );
 
 export const Projects = async () => {
-  // const [projects, setProjects] = useState<Project[]>([]);
-  // useEffect(() => {
-  //   getProjects().then((data) => {
-  //     setProjects(data);
-  //   });
-  // }, []);
   const projects = await getProjects();
 
   const containerStyles =
