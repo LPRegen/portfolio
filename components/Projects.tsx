@@ -1,6 +1,6 @@
 "use client";
-import { Project } from "types/schema-types";
 import Image from "next/legacy/image";
+import { Project } from "types/schema-types";
 import { Container } from "./Container";
 import { CustomLink } from "./CustomLink";
 import { Heading } from "./Heading";
