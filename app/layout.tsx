@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import { Footer } from "components/Footer";
-import Navbar from "components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,14 +32,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const mainStyle = "mx-4 max-w-4xl sm:mx-8 lg:mx-auto";
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <main className={mainStyle}>{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
