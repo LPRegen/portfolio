@@ -15,6 +15,7 @@ const navItem =
 
 const wrapperStyle = "absolute w-full z-50 border-b shadow-lg";
 
+// FIX: display
 const Navbar = () => {
   const mdStyles = "md:gap-8 md:flex md:items-center md:px-28";
   return (
