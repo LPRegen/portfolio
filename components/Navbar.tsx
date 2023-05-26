@@ -1,11 +1,11 @@
 import { CustomLink } from "./CustomLink";
 
-interface Item {
+interface Url {
   name: string;
   href: string;
 }
 
-const itemList: Array<Item> = [
+const itemList: Array<Url> = [
   { name: "Home", href: "/" },
   { name: "Blog", href: "/blog" },
 ];
