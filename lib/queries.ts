@@ -1,25 +1,29 @@
 import { groq } from "next-sanity";
-import { Project } from "../types/schema-types";
+import { Post, Project } from "../types/schema-types";
 import { client } from "./client";
 
-const projectsQuery =
-  "*[_type == 'projects'] { title, description, imgGroup, techList, urlsGroup }";
-
 export async function getProjects(): Promise<Project[]> {
-  const projects = await client.fetch(groq`${projectsQuery}`);
+  const projects = await client.fetch(
+    groq`*[_type == 'projects'] { title, description, imgGroup, techList, urlsGroup }`
+  );
   return projects;
 }
 
-export async function getPosts({
-  quantity,
-}: {
-  quantity: number;
-}): Promise<[]> {
-  const posts = await client.fetch(groq`${quantity}`);
+export async function getPosts(quantity = 10): Promise<Post[]> {
+  const posts = await client.fetch(
+    groq`*[_type == "post"] | order(_createdAt desc) {_id, title, slug, postImage, description}[0..${quantity}]`
+  );
   return posts;
 }
 
-export async function getPost(): Promise<[]> {
-  const post = await client.fetch(groq``);
+export async function getPost(): Promise<Post> {
+  const post =
+    await client.fetch(groq`*[_type == "post" && slug.current == $slug][0]{
+    title,
+    postImage,
+    slug,
+    body,
+    publishedAt
+  }`);
   return post;
 }
