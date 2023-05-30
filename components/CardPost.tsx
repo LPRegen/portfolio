@@ -17,40 +17,23 @@ export const CardPost = ({
 }: CardPostProps) => {
   const { altTextImage, imageUrl, authorName, authorProfile } = postImage;
   const styles = {
-    container: {
-      hero: "gap-6 lg:gap-12",
-      regular: "gap-4 lg:gap-6 self-start",
+    type: {
+      hero: "gap-3 lg:gap-4",
+      regular: "gap-2 lg:gap-3 self-start",
     },
     containerImg: {
       hero: "relative h-56 sm:h-64 md:h-72 lg:h-[450px]",
-      regular: "relative h-40 sm:h-48 md:h-56 lg:h-80",
+      regular: "relative h-40 sm:h-30 md:h-40 lg:h-50",
     },
     textContainer: {
-      hero: "pb-6 gap-6 lg:gap-8",
-      regular: "gap-4",
-    },
-    imgSizes: {
-      hero: `
-      (max-width: 640px) 80vw,
-      (max-width: 768px) 70vw,
-      (max-width: 1024px) 71vw,
-      (max-width: 1280px) 65vw,
-      (max-width: 1536px) 66vw,
-      70vw
-      `,
-      regular: `
-      (max-width: 640px) 80vw,
-      (max-width: 768px) 70vw,
-      (max-width: 1024px) 30.5vw,
-      (max-width: 1536px) 30vw,
-      31vw
-      `,
+      hero: "pb-6 gap-4",
+      regular: "gap-2",
     },
   };
 
   return (
     <div
-      className={`grid shadow-xl rounded-xl transition md:hover:shadow-2xl ${styles.container[variant]}`}
+      className={`grid rounded-xl shadow-xl transition md:hover:shadow-2xl ${styles.type[variant]}`}
     >
       <div className={`grid gap-2`}>
         <CustomLink
@@ -62,8 +45,7 @@ export const CardPost = ({
             alt={altTextImage}
             src={imageUrl}
             fill
-            className={`object-cover rounded-t-xl`}
-            sizes={styles.imgSizes[variant]}
+            className={`rounded-t-xl object-cover`}
             priority
           />
         </CustomLink>
