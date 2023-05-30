@@ -16,14 +16,16 @@ export async function getPosts(quantity = 10): Promise<Post[]> {
   return posts;
 }
 
-export async function getPost(): Promise<Post> {
-  const post =
-    await client.fetch(groq`*[_type == "post" && slug.current == $slug][0]{
+export async function getPost(slug: string): Promise<Post> {
+  const post = await client.fetch(
+    groq`*[_type == "post" && slug.current == $slug][0]{
     title,
     postImage,
     slug,
     body,
     publishedAt
-  }`);
+  }`,
+    { slug }
+  );
   return post;
 }
