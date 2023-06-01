@@ -25,7 +25,9 @@ const customComponents: Partial<PortableTextReactComponents> = {
       <Bold className="font-semibold text-orange-700">{children}</Bold>
     ),
     code: ({ children }) => (
-      <code className="rounded bg-orange-400/70 px-1.5 py-0.5">{children}</code>
+      <code className="rounded bg-orange-400/70 px-1.5 py-0.5 text-[85%]">
+        {children}
+      </code>
     ),
   },
   list: {
