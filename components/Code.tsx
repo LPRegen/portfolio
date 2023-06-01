@@ -22,7 +22,7 @@ export const Code = ({ language, code }: CodeProps) => {
   }, []);
 
   return (
-    <div className="overflow-auto">
+    <div className="w-[90vw] lg:w-auto">
       <pre className="line-numbers">
         <code className={`lang-${language}`}>{code}</code>
       </pre>
