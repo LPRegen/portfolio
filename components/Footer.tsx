@@ -28,13 +28,13 @@ export const Footer = () => {
     { name: "Blog", href: "/blog" },
   ];
   return (
-    <footer className="grid gap-8 border-t mt-20">
-      <ul className="flex justify-center items-center pt-6 gap-[5%]">
+    <footer className="grid gap-8 border-t">
+      <ul className="flex items-center justify-center gap-[5%] pt-6">
         {sections.map((item) => (
           <Sections item={item} key={item.name} />
         ))}
       </ul>
-      <Paragraph className="grid mx-auto text-sm text-gray-500 pb-6">
+      <Paragraph className="mx-auto grid pb-6 text-sm text-gray-500">
         Copyright © 2022 Manuel Escribano
       </Paragraph>
     </footer>
