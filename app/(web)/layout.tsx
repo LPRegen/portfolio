@@ -6,7 +6,7 @@ export default async function WebsiteLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const mainStyle = "mx-4 max-w-3xl sm:mx-8 lg:mx-auto";
+  const mainStyle = "mx-4 max-w-3xl sm:mx-8 md:mx-auto";
 
   return (
     <>
