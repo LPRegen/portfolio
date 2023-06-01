@@ -21,9 +21,9 @@ const customComponents: Partial<PortableTextReactComponents> = {
         {children}
       </CustomLink>
     ),
-    em: ({ children }) => {
-      return <Bold className="font-medium text-orange-700">{children}</Bold>;
-    },
+    strong: ({ children }) => (
+      <Bold className="font-semibold text-orange-700">{children}</Bold>
+    ),
   },
   list: {
     bullet: ({ children }) => (
@@ -40,9 +40,6 @@ const customComponents: Partial<PortableTextReactComponents> = {
   },
   // TODO: add
   // - inline code
-  // - strong
-  // - em,
-  // - underline
   // - headings
   // -> add margin bottom.
   // - striketrhough
