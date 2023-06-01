@@ -2,9 +2,7 @@ import Image from "next/image";
 import manuel_escribano from "../public/manuel-escribano.webp";
 import { Post } from "../types/schema-types";
 
-type ProfileProps = Pick<Post, "publishedAt">;
-
-export const Profile = ({ publishedAt }: ProfileProps) => {
+export const Profile = ({ publishedAt }: Pick<Post, "publishedAt">) => {
   return (
     <div className="flex items-center justify-start">
       <Image
