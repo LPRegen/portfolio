@@ -7,7 +7,7 @@ export default async function BlogLayout({
   children: React.ReactNode;
 }) {
   const mainStyle =
-    "grid grid-rows-auto gap-16 mx-4 max-w-3xl sm:mx-8 lg:mx-auto";
+    "grid grid-rows-auto gap-16 mx-4 max-w-3xl sm:mx-8 md:mx-auto";
 
   return (
     <>
