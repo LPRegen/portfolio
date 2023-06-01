@@ -15,9 +15,9 @@ export const Profile = ({ publishedAt }: ProfileProps) => {
         width={40}
         height={40}
       />
-      <div className="grid ml-3">
+      <div className="ml-3 grid">
         <p className="text-orange-700">Manuel Escribano</p>
-        <p className="font-light text-xs">
+        <p className="text-xs font-light">
           Last update:{" "}
           {new Date(publishedAt).toLocaleDateString("en-US", {
             month: "short",
