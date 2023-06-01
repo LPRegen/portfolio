@@ -16,6 +16,9 @@ export const CustomLink = ({
   active,
 }: CustomLinkProps): JSX.Element => {
   const activeProp = active ? `${active && "bg-secondary-300"}` : "";
+  // TODO: Add styles for
+  // - hover
+  // - text-color
 
   return (
     <Link href={href} className={`${activeProp} ${className}`} title={title}>

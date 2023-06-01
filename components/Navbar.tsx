@@ -13,6 +13,8 @@ const itemList: Array<Url> = [
 const navItem =
   "flex items-center p-1.5 my-1 font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:bg-gray-200/80 focus:bg-gray-200/80";
 
+// TODO: Add bg on hover
+
 const containerStyle =
   "flex gap-8 h-14 px-4 border-b shadow-lg sm:px-8 lg:px-14";
 
