@@ -24,6 +24,9 @@ const customComponents: Partial<PortableTextReactComponents> = {
     strong: ({ children }) => (
       <Bold className="font-semibold text-orange-700">{children}</Bold>
     ),
+    code: ({ children }) => (
+      <code className="rounded bg-orange-400/70 px-1.5 py-0.5">{children}</code>
+    ),
   },
   list: {
     bullet: ({ children }) => (
@@ -39,12 +42,10 @@ const customComponents: Partial<PortableTextReactComponents> = {
     code: ({ value }) => <Code language={value.language} code={value.code} />,
   },
   // TODO: add
-  // - inline code
+  // - set width
+  // - display post img
   // - headings
   // -> add margin bottom.
-  // - striketrhough
-  // -
-  // - set width
 };
 
 export const Serializer = ({ description }: Pick<Project, "description">) => {
