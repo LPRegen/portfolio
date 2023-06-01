@@ -20,8 +20,7 @@ export function ContactForm(): JSX.Element {
 
     const sendingStyle = (): string =>
       state.submitting ? "bg-primary-400/60" : "";
-    const buttonStyle =
-      `${sendingStyle()} rounded-lg text-secondary-800 bg-primary-200/50 p-4 disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed`;
+    const buttonStyle = `${sendingStyle()} rounded-lg text-secondary-800 bg-primary-200/50 p-4 disabled:bg-lime-200/60 disabled:text-primary-700 disabled:cursor-not-allowed`;
 
     return (
       <Button
@@ -43,7 +42,7 @@ export function ContactForm(): JSX.Element {
     return (
       <form
         onSubmit={handleSubmit}
-        className="grid gap-4 p-4 rounded-xl shadow-2xl font-lato max-w-lg w-full"
+        className="font-lato mb-20 grid w-full max-w-lg gap-4 rounded-xl p-4 shadow-2xl"
       >
         <div className={containerStyle}>
           <label htmlFor="name" className={labelStyle}>
