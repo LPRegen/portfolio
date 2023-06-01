@@ -22,7 +22,7 @@ export const Code = ({ language, code }: CodeProps) => {
   }, []);
 
   return (
-    <div className="w-[90vw] max-w-3xl">
+    <div className="my-4 w-[90vw] max-w-3xl">
       <pre className="line-numbers">
         <code className={`lang-${language}`}>{code}</code>
       </pre>
