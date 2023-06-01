@@ -10,10 +10,26 @@ import { Heading } from "./Heading";
 
 const customComponents: Partial<PortableTextReactComponents> = {
   block: {
-    h1: ({ children }) => <Heading as="h1">{children}</Heading>,
-    h2: ({ children }) => <Heading as="h2">{children}</Heading>,
-    h3: ({ children }) => <Heading as="h3">{children}</Heading>,
-    h4: ({ children }) => <Heading as="h4">{children}</Heading>,
+    h1: ({ children }) => (
+      <Heading as="h1" className="py-6">
+        {children}
+      </Heading>
+    ),
+    h2: ({ children }) => (
+      <Heading as="h2" className="py-5">
+        {children}
+      </Heading>
+    ),
+    h3: ({ children }) => (
+      <Heading as="h3" className="py-4">
+        {children}
+      </Heading>
+    ),
+    h4: ({ children }) => (
+      <Heading as="h4" className="py-2">
+        {children}
+      </Heading>
+    ),
   },
   marks: {
     link: ({ children, value }) => (
@@ -43,11 +59,6 @@ const customComponents: Partial<PortableTextReactComponents> = {
   types: {
     code: ({ value }) => <Code language={value.language} code={value.code} />,
   },
-  // TODO: add
-  // - set width
-  // - display post img
-  // - headings
-  // -> add margin bottom.
 };
 
 export const Serializer = ({ description }: Pick<Project, "description">) => {
