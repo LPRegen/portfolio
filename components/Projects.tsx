@@ -10,14 +10,14 @@ import { getProjects } from "lib/queries";
 import { Serializer } from "./Serializer";
 
 const Links = (urls: Pick<Project, "urlsGroup">) => (
-  <div className="grid grid-cols-2 gap-12 mx-auto">
+  <div className="mx-auto grid grid-cols-2 gap-12">
     {urls.urlsGroup.map((group) => {
       return (
         <CustomLink
           key={group.urlTitle}
           href={group.urlValue}
           title="Check the live version of this project."
-          className="flex gap-2 text-primary-800/90 underline p-3 text-lg"
+          className="flex gap-2 p-3 text-lg text-primary-800/90 underline"
         >
           <Icon
             iconName={group.urlTitle === "Live" ? "link" : "github"}
@@ -31,9 +31,9 @@ const Links = (urls: Pick<Project, "urlsGroup">) => (
 );
 
 const TechList = (techList: Pick<Project, "techList">) => (
-  <ul className="text-xs flex flex-wrap gap-1 col-span-full">
+  <ul className="col-span-full flex flex-wrap gap-1 text-xs">
     {techList.techList.map((tech) => (
-      <li key={tech} className="bg-gray-400 px-2 py-1.5 rounded-lg">
+      <li key={tech} className="rounded-lg bg-gray-400 px-2 py-1.5">
         {tech}{" "}
       </li>
     ))}
@@ -58,7 +58,7 @@ export const Projects = async () => {
               className="object-contain"
             />
           </div>
-          <div className="flex flex-col justify-between gap-4 items-start px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
+          <div className="flex flex-col items-start justify-between gap-4 px-4 pb-4 sm:p-8 lg:gap-8 lg:p-4">
             <Heading as="h3" className="w-full text-xl">
               {title}
             </Heading>
