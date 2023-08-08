@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Project } from "types/schema-types";
 import { Container } from "./Container";
 import { CustomLink } from "./CustomLink";
@@ -54,7 +54,7 @@ export const Projects = async () => {
             <Image
               src={urlFor(imgGroup.projImage).url()}
               alt={imgGroup.altImage}
-              layout="fill"
+              fill={true}
               objectFit="contain"
             />
           </div>
