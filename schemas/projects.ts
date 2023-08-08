@@ -36,6 +36,7 @@ const project = defineType({
           name: "repoUrl",
           type: "object",
           fields: [
+            // TODO: Enforce links order.
             defineField({
               title: "URL Title",
               name: "urlTitle",
