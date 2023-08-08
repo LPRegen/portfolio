@@ -15,8 +15,7 @@ export const Hero = () => {
         Manuel Escribano
       </Heading>
       <Paragraph className={`${textStyles} max-w-[740px]`}>
-        Self taught frontend developer making a positive impact in the life of
-        people through technology.
+        Web Developer - React Js | Next Js | TypeScript
       </Paragraph>
       <CustomLink
         href="#contact"
