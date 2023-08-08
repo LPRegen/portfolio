@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // TODO: implement fonts feat
+  // FIX: appDir
   experimental: {
     appDir: true,
   },
