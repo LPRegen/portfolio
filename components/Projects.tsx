@@ -55,7 +55,7 @@ export const Projects = async () => {
               src={urlFor(imgGroup.projImage).url()}
               alt={imgGroup.altImage}
               fill={true}
-              objectFit="contain"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col justify-between gap-4 items-start px-4 pb-4 sm:p-8 lg:p-4 lg:gap-8">
