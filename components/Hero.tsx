@@ -1,4 +1,3 @@
-import { CustomLink } from "./CustomLink";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
 
@@ -17,13 +16,13 @@ export const Hero = () => {
       <Paragraph className={`${textStyles} max-w-[740px]`}>
         Web Developer - React Js | Next Js | TypeScript
       </Paragraph>
-      <CustomLink
+      <a
         href="#contact"
         className={`${contactStyles} font-lato`}
         title={"Contact me"}
       >
         Contact me
-      </CustomLink>
+      </a>
     </div>
   );
 };
