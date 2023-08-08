@@ -30,14 +30,14 @@ const Links = (urls: Pick<Project, "urlsGroup">) => (
   </div>
 );
 
-const TechList = (techList: Pick<Project, "techList">): JSX.Element => (
-  <div className="flex gap-1">
+const TechList = (techList: Pick<Project, "techList">) => (
+  <ul className="text-xs flex flex-wrap gap-1 col-span-full">
     {techList.techList.map((tech) => (
-      <i className="text-secondary-600" key={tech}>
-        {tech}
-      </i>
+      <li key={tech} className="bg-gray-400 px-2 py-1.5 rounded-lg">
+        {tech}{" "}
+      </li>
     ))}
-  </div>
+  </ul>
 );
 
 export const Projects = async () => {
@@ -62,8 +62,8 @@ export const Projects = async () => {
             <Heading as="h3" className="w-full text-xl">
               {title}
             </Heading>
-            <Serializer description={description} />
             <TechList techList={techList} />
+            <Serializer description={description} />
             <Links urlsGroup={urlsGroup} />
           </div>
         </div>
