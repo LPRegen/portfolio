@@ -10,7 +10,7 @@ import { getProjects } from "lib/queries";
 import { Serializer } from "./Serializer";
 
 const Links = (urls: Pick<Project, "urlsGroup">) => (
-  <div className="grid grid-cols-2 gap-12 mt-4">
+  <div className="grid grid-cols-2 gap-12 mx-auto">
     {urls.urlsGroup.map((group) => {
       return (
         <CustomLink
