@@ -11,7 +11,7 @@ export const Hero = () => {
   return (
     <div className={heroStyles}>
       <Paragraph className={`${textStyles}`}>Hi, my name is</Paragraph>
-      <Heading as="h1" className="text-hero font-montserrat">
+      <Heading as="h1" className="font-montserrat text-hero">
         Manuel Escribano
       </Heading>
       <Paragraph className={`${textStyles} max-w-[740px]`}>

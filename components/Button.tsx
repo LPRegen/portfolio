@@ -34,7 +34,7 @@ export const Button = ({
 
   return (
     <button
-      className={`flex justify-center align-center ${mode[variant]} ${className}`}
+      className={`align-center flex justify-center ${mode[variant]} ${className}`}
       disabled={disabled}
       {...props}
     >

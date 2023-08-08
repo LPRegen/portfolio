@@ -8,9 +8,9 @@ interface TechnologiesProps {
 
 export const Technology = ({ title, icon }: TechnologiesProps) => {
   return (
-    <div className="flex flex-col gap-2 justify-center items-center text-secondary-800">
+    <div className="flex flex-col items-center justify-center gap-2 text-secondary-800">
       <Icon iconName={icon} aria-hidden />
-      <Paragraph className="text-secondary-600 text-xs font-lato">
+      <Paragraph className="font-lato text-xs text-secondary-600">
         {title}
       </Paragraph>
     </div>

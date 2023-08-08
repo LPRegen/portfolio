@@ -22,7 +22,7 @@ export const Container = ({
       <Heading as="h2" after className="mt-8">
         {title}
       </Heading>
-      <div className={`grid gap-12 lg:gap-16 px-4 ${postStyle} ${className}`}>
+      <div className={`grid gap-12 px-4 lg:gap-16 ${postStyle} ${className}`}>
         {children}
       </div>
     </div>

@@ -60,9 +60,9 @@ export const AboutMe = (): JSX.Element => {
         </Paragraph>
       </div>
 
-      <div className="grid gap-6 mx-auto rounded-xl shadow-xl p-4 w-full max-w-6xl">
+      <div className="mx-auto grid w-full max-w-6xl gap-6 rounded-xl p-4 shadow-xl">
         <Heading as="h3">Technologies</Heading>
-        <div className="text-center grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4">
+        <div className="grid grid-cols-3 grid-rows-2 gap-x-3.5 gap-y-5 pt-4 text-center">
           {techList.map(({ iconName, title }) => (
             <Technology icon={iconName} title={title} key={iconName} />
           ))}
