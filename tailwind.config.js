@@ -9,6 +9,7 @@ module.exports = {
         hero: "clamp(1.5rem, 1.8852rem + 1.3456vw, 3.5rem)",
       },
       colors: {
+        // TODO: remove unused colors.
         primary: {
           50: "#E4E3FF",
           100: "#CBCDFF",

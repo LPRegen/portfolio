@@ -15,6 +15,7 @@ export const CustomLink = ({
   title,
   active,
 }: CustomLinkProps): JSX.Element => {
+  // FIX: Remove return type
   const activeProp = active ? `${active && "bg-secondary-300"}` : "";
   // TODO: Add styles for
   // - hover
