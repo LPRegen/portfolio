@@ -10,9 +10,9 @@ async function Post({ params: { slug } }: { params: Params }) {
   const { authorName, authorProfile, altTextImage, imageUrl } = postImage;
 
   return (
-    <div className="my-10 grid gap-6">
+    <div className="my-14 grid gap-2">
       <Profile publishedAt={publishedAt} />
-      <div className="relative h-52 md:h-64 lg:h-80">
+      <div className="relative mt-4 h-52 md:h-64 lg:h-80">
         <Image
           alt={altTextImage}
           src={imageUrl}

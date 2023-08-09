@@ -6,7 +6,7 @@ async function Blog() {
   const [featPost, ...morePosts] = await getPosts();
   return (
     <>
-      <div className="mt-14 grid gap-8 h-[100vh]">
+      <div className="mb-20 mt-14 grid gap-8">
         <Heading as="h1">Featured post</Heading>
         <CardPost
           slug={featPost.slug}
@@ -17,7 +17,7 @@ async function Blog() {
           postImage={featPost.postImage}
         />
       </div>
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="mb-20 grid gap-5 lg:grid-cols-2">
         <Heading as="h2" className="mb-4 lg:col-span-full">
           More posts
         </Heading>
