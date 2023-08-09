@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.root,
-#root,
-#docs-root {
-  --primary-bg: #fff6eb;
-  --hover-color: #dfe0df;
-  --primary-text: #2f4858;
-  --secondary-text: #535c78;
-  --cta-color: #d97738;
-}
-
 @layer base {
   html {
     @apply scroll-smooth;
