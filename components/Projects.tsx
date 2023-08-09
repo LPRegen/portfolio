@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { Project } from "types/schema-types";
 import { Container } from "./Container";
-import { CustomLink } from "./CustomLink";
 import { Heading } from "./Heading";
-import { Icon } from "./Icons";
 import { Tags } from "./Tags";
 import { Serializer } from "./Serializer";
 
@@ -11,21 +9,18 @@ import { urlFor } from "lib/client";
 import { getProjects } from "lib/queries";
 
 const Links = (urls: Pick<Project, "urlsGroup">) => (
-  <div className="mx-auto grid grid-cols-2 gap-12">
-    {urls.urlsGroup.map((group) => {
+  <div className="mx-auto flex gap-12">
+    {urls.urlsGroup.map((link) => {
+      const linkTitle = link.urlTitle === "Live" ? "live site" : "repository";
       return (
-        <CustomLink
-          key={group.urlTitle}
-          href={group.urlValue}
-          title="Check the live version of this project."
-          className="flex gap-2 p-3 text-lg text-primary-800/90 underline"
+        <a
+          key={link.urlTitle}
+          href={link.urlValue}
+          title={`Check the ${linkTitle} of this project.`}
+          className="px-2 py-1 text-lg text-primary-800/90 underline"
         >
-          <Icon
-            iconName={group.urlTitle === "Live" ? "link" : "github"}
-            aria-hidden
-          />
-          {group.urlTitle}
-        </CustomLink>
+          {link.urlTitle}
+        </a>
       );
     })}
   </div>
