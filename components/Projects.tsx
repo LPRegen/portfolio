@@ -4,10 +4,11 @@ import { Container } from "./Container";
 import { CustomLink } from "./CustomLink";
 import { Heading } from "./Heading";
 import { Icon } from "./Icons";
+import { Tags } from "./Tags";
+import { Serializer } from "./Serializer";
 
 import { urlFor } from "lib/client";
 import { getProjects } from "lib/queries";
-import { Serializer } from "./Serializer";
 
 const Links = (urls: Pick<Project, "urlsGroup">) => (
   <div className="mx-auto grid grid-cols-2 gap-12">
@@ -28,16 +29,6 @@ const Links = (urls: Pick<Project, "urlsGroup">) => (
       );
     })}
   </div>
-);
-
-const TechList = (techList: Pick<Project, "techList">) => (
-  <ul className="col-span-full flex flex-wrap gap-1 text-xs">
-    {techList.techList.map((tech) => (
-      <li key={tech} className="rounded-lg bg-gray-400 px-2 py-1.5">
-        {tech}{" "}
-      </li>
-    ))}
-  </ul>
 );
 
 export const Projects = async () => {
@@ -62,7 +53,7 @@ export const Projects = async () => {
             <Heading as="h3" className="w-full text-xl">
               {title}
             </Heading>
-            <TechList techList={techList} />
+            <Tags technologies={techList} />
             <Serializer description={description} />
             <Links urlsGroup={urlsGroup} />
           </div>
