@@ -38,7 +38,7 @@ export const CardPost = ({
       <div className={`grid gap-2`}>
         <CustomLink
           href={`/blog/${slug.current}`}
-          title={`Read ${title}`}
+          title={`Read ${title}.`}
           className={styles.containerImg[variant]}
         >
           <Image
