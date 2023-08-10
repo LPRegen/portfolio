@@ -18,7 +18,7 @@ interface Content {
   children: [
     {
       text: string;
-    },
+    }
   ];
 }
 
@@ -55,4 +55,8 @@ interface Project {
   };
   techList: Array<string>;
   urlsGroup: Array<Urls>;
+}
+
+interface ProjectList {
+  list: Project[];
 }

@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Project } from "types/schema-types";
 import { Container } from "./Container";
 import { Heading } from "./Heading";
-import { Tags } from "./Tags";
 import { Serializer } from "./Serializer";
+import { Tags } from "./Tags";
 
 import { urlFor } from "lib/client";
 import { getProjects } from "lib/queries";
@@ -27,14 +27,14 @@ const Links = (urls: Pick<Project, "urlsGroup">) => (
 );
 
 export const Projects = async () => {
-  const projects = await getProjects();
+  const { list } = await getProjects();
 
   const containerStyles =
     "grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato";
 
   return (
     <Container variant="section" id="projects" title="Projects">
-      {projects.map(({ title, imgGroup, urlsGroup, techList, description }) => (
+      {list.map(({ title, imgGroup, urlsGroup, techList, description }) => (
         <div key={title} className={containerStyles}>
           <div className="relative -z-10">
             <Image

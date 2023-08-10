@@ -1,8 +1,8 @@
 import { groq } from "next-sanity";
-import { Post, Project } from "../types/schema-types";
+import { Post, ProjectList } from "../types/schema-types";
 import { client } from "./client";
 
-export async function getProjects(): Promise<Project[]> {
+export async function getProjects(): Promise<ProjectList> {
   const projects = await client.fetch(
     groq`*[_type == 'projects'][0] {
       ...,
