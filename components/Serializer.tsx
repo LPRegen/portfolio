@@ -5,7 +5,6 @@ import {
 import { Project } from "types/schema-types";
 import { Bold } from "./Bold";
 import { Code } from "./Code";
-import { CustomLink } from "./CustomLink";
 import { Heading } from "./Heading";
 
 const customComponents: Partial<PortableTextReactComponents> = {
@@ -33,9 +32,13 @@ const customComponents: Partial<PortableTextReactComponents> = {
   },
   marks: {
     link: ({ children, value }) => (
-      <CustomLink className="text-blue-600 hover:underline" href={value.href}>
+      <a
+        className="text-blue-600 hover:underline"
+        href={value.href}
+        title={`Go to ${children}`}
+      >
         {children}
-      </CustomLink>
+      </a>
     ),
     strong: ({ children }) => (
       <Bold className="font-semibold text-orange-700">{children}</Bold>
