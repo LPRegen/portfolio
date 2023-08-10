@@ -3,39 +3,32 @@ import { Heading } from "components/Heading";
 import { getPosts } from "lib/queries";
 
 async function Blog() {
-  const [featPost, ...morePosts] = await getPosts();
+  const [latestPost] = await getPosts();
+
   return (
     <>
       <div className="mb-20 mt-14 grid gap-8">
-        <Heading as="h1">Featured post</Heading>
+        <Heading as="h1">Latest post</Heading>
         <CardPost
-          slug={featPost.slug}
-          key={featPost._id}
-          title={featPost.title}
-          description={featPost.description}
+          slug={latestPost.slug}
+          key={latestPost._id}
+          title={latestPost.title}
+          description={latestPost.description}
           variant="hero"
-          postImage={featPost.postImage}
+          postImage={latestPost.postImage}
         />
-      </div>
-      <div className="mb-20 grid gap-5 lg:grid-cols-2">
-        <Heading as="h2" className="mb-4 lg:col-span-full">
-          More posts
-        </Heading>
-        {morePosts.map((post) => {
-          return (
-            <CardPost
-              slug={post.slug}
-              key={post._id}
-              title={post.title}
-              description={post.description}
-              variant="regular"
-              postImage={post.postImage}
-            />
-          );
-        })}
       </div>
     </>
   );
 }
+
+export const revalidate = 1800;
+
+//      <div className="mb-20 grid gap-5 lg:grid-cols-2">
+//        <Heading as="h2" className="mb-4 lg:col-span-full">
+//          More posts
+//        </Heading>
+//        {otherPosts && <MorePosts posts={otherPosts} />}
+//      </div>
 
 export default Blog;
