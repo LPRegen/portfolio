@@ -4,7 +4,10 @@ import { client } from "./client";
 
 export async function getProjects(): Promise<Project[]> {
   const projects = await client.fetch(
-    groq`*[_type == 'projectList'] { ..., list[]-> }`
+    groq`*[_type == 'projects'][0] {
+      ...,
+      list[]->
+    }`
   );
   return projects;
 }
