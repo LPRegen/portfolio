@@ -1,9 +1,9 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 const project = defineType({
-  title: "Projects",
+  title: "Project",
   type: "document",
-  name: "projects",
+  name: "project",
   preview: { select: { title: "title" } },
   fields: [
     defineField({
