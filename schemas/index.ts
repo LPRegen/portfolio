@@ -1,6 +1,6 @@
 import category from "./category";
 import post from "./post";
-import project from "./projects";
+import project from "./project";
 
 const schemas = [category, post, project];
 
