@@ -36,4 +36,6 @@ async function Post({ params: { slug } }: { params: Params }) {
   );
 }
 
+export const revalidate = 1800;
+
 export default Post;
