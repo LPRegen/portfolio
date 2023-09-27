@@ -6,6 +6,7 @@ async function Blog() {
   const [latestPost] = await getPosts();
 
   return (
+    // TODO: Remove this fragment.
     <>
       <div className="mb-20 mt-14 grid gap-8">
         <Heading as="h1">Latest post</Heading>

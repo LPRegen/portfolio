@@ -2,6 +2,7 @@ import { groq } from "next-sanity";
 import { Post, ProjectList } from "../types/schema-types";
 import { client } from "./client";
 
+// TODO: handle errors
 export async function getProjects(): Promise<ProjectList> {
   const projects = await client.fetch(
     groq`*[_type == 'projects'][0] {
