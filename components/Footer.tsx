@@ -35,7 +35,7 @@ export const Footer = () => {
         ))}
       </ul>
       <Paragraph className="mx-auto grid pb-6 text-sm text-gray-500">
-        Copyright © 2023 Manuel Escribano
+        Copyright © 2025 Manuel Escribano
       </Paragraph>
     </footer>
   );
