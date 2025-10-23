@@ -29,14 +29,13 @@ const Links = (urls: Pick<Project, "urlsGroup">) => (
 export const Projects = async () => {
   const { list } = await getProjects();
 
-  const containerStyles =
-    "grid grid-rows-2 shadow-2xl rounded-xl md:grid-rows-none md:grid-cols-2 font-lato";
+  const containerStyles = "shadow-2xl rounded-xl font-lato";
 
   return (
     <Container variant="section" id="projects" title="Projects">
       {list.map(({ title, imgGroup, urlsGroup, techList, description }) => (
         <div key={title} className={containerStyles}>
-          <div className="relative -z-10">
+          <div className="relative -z-10 h-48 md:h-64">
             <Image
               src={urlFor(imgGroup.projImage).url()}
               alt={imgGroup.altImage}
